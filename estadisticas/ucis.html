@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <!-- FAVICON-->
+    <link rel="apple-touch-icon" href="../images/favicon.ico"/>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <!-- SEO TAGS -->
+    <title>UCIs</title>
+    <meta name="description" content="Entérate de las estadísticas correspondientes a la capacidad de UCIs que hay en el país."/>
+    <!-- Open Graph data-->
+    <meta property="og:title" content="UCIs"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://coronaviruscolombia.gov.co/Covid19/"/>
+    <meta property="og:description" content="Entérate de las estadísticas correspondientes a la capacidad de UCIs que hay en el país."/>
+    <meta property="og:image" content="https://coronaviruscolombia.gov.co/Covid19/images/share-covid-19-2.jpg"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@infopresidencia"/>
+    <meta name="twitter:creator" content="@infopresidencia"/>
+    <meta name="twitter:title" content="UCIs"/>
+    <meta name="twitter:description" content="Entérate de las estadísticas correspondientes a la capacidad de UCIs que hay en el país."/>
+    <meta name="twitter:image" content="https://coronaviruscolombia.gov.co/Covid19/images/share-covid-19-2.jpg"/>
+    <!-- STYLES-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900&amp;amp;display=swap"/>
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/mainCovid.css"/>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-16660818-39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-16660818-39');
+      
+      
+    </script>
+  </head>
+  <body>
+    <!-- BLACK-->
+    <div class="blackbox blackboxLoader"><i class="iconm-loader"></i></div>
+    <div class="blackbox blackboxBrowser fullBlack" style="display: none;">
+      <div class="popupModal col-12 col-sm-11 col-lg-7 col-xl-6">
+        <div class="innerPopupModal">
+          <h2>
+             Su Navegador no es compatible</h2>
+          <p class="browserExperience">
+            Para una mejor experiencia use una de estas otras opciones
+            
+          </p>
+          <ul class="browserList">
+            <li>
+              <!--RUTA --><img src="../images/icon-safari.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="../images/icon-chrome.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="../images/icon-firefox.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="../images/icon-ie-edge.jpg"/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- HEADER-->
+    <header class="col-12 col-sm-12">
+      <div class="headerContent">
+        <div id="contentMobile">
+          <figure class="logo"><a href="../index.html" tabindex="0"><img src="../images/govco-bn.png" alt="Gov.co"/></a></figure>
+        </div>
+      </div>
+    </header>
+    <div class="row" id="mainContent">
+      <div class="col-12 col-sm-12" id="mainContainer" dataClass="ucis">
+        <section class="bannerTitle banner-ayudar col-12 col-sm-12">
+          <figure><img class="imageDesk" src="../images/comportamientoCovid/bannerCifrasDesk.png" alt="" title=""/><img class="imageTablet" src="../images/comportamientoCovid/bannerCifrasTablet.png" alt="" title=""/><img class="imageMobile" src="../images/comportamientoCovid/bannerCifrasMobile.png" alt="" title=""/></figure>
+        </section>
+        <section class="iframeContainer containerDecretos col-12 col-sm-12">
+          <div class="innerIframeContainer innerContainerDecretos innerWrapper">
+            <div class="menuEstadisticaCovid menuEstadisticaCovidVictor" id="dashboardAncor">
+              <ul>
+                <li class="col-12 col-sm-6 col-xl-3"><a href="../estadisticas/sigc.html#dashboardAncor" databodyclass="sigc-mounstrou"><i class="iconm-sigc-mounstrou"></i>
+                    <p>SIGC</p></a></li>
+                <li class="col-12 col-sm-6 col-xl-3"><a href="../estadisticas/informacion-general-covid-19.html#dashboardAncor" databodyclass="informacion-general-covid-19"><i class="iconm-informacion-general-covid-19"></i>
+                    <p>Información General COVID-19</p></a></li>
+                <li class="col-12 col-sm-6 col-xl-3"><a href="../estadisticas/ayuda-social.html#dashboardAncor" databodyclass="ayuda-social"><i class="iconm-ayudasocial-dashboard"></i>
+                    <p>Ayuda Social</p></a></li>
+                <li class="col-12 col-sm-6 col-xl-3"><a href="../estadisticas/ucis.html#dashboardAncor" databodyclass="ucis"><i class="iconm-uci-dashboard"></i>
+                    <p>Capacidad de UCIs</p></a></li>
+              </ul>
+            </div>
+            <div class="content-buttons"><a class="btnBox btnItem" href="https://www.iadb.org/en/topics-effectiveness-improving-lives/coronavirus-impact-dashboard" target="_blank">
+                <p>Impacto coronavirus - BID</p></a><a class="btnBox btnItem" href="https://www.gstatic.com/covid19/mobility/2020-04-11_CO_Mobility_Report_en.pdf" target="_blank">
+                <p>Data Google de movilidad</p></a></div>
+            <iframe class="dashboardCovidMap" src="https://govcodashboardcovid19.shinyapps.io/UCI_/" width="100%" height="100%" frameborder="0" scrolling="yes" title="Entérate de las estadísticas correspondientes a la capacidad de UCIs que hay en el país."></iframe>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- BTN SCROLL-->
+    <div class="btnScrolTop"><a class="ancor" href="#mainContent"><i class="iconm-arrowY"></i></a></div>
+    <!-- SCRIPT-->
+    <script src="../js/vendor/TweenMax.min.js"></script>
+    <script src="../js/vendor/TimelineMax.min.js"></script>
+    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="../js/vendor/smooth-scroll.polyfills.min.js"></script>
+    <script src="../js/mainCovid.js"></script>
+    <script>
+      setTimeout(function () {
+        document.querySelector('.blackboxLoader').style.display = 'none';
+      }, 1000);
+    </script>
+    <script src="../js/mainCovid-basicInsides.js"></script>
+  </body>
+</html>

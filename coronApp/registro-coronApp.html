@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" href="../images/favicon.ico" />
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+  <!-- SEO TAGS -->
+  <title>Registro - CoronApp</title>
+  <meta name="description" content="Registrate para evaluar tus sintomas y obtener tu codigo QR " />
+  <!-- Open Graph data-->
+  <meta property="og:title" content="Registro - CoronApp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" />
+  <meta property="og:description" content="Registrate para evaluar tus sintomas y obtener tu codigo QR " />
+  <meta property="og:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- Twitter Card data-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@infopresidencia" />
+  <meta name="twitter:creator" content="@infopresidencia" />
+  <meta name="twitter:title" content="Registro - CoronApp" />
+  <meta name="twitter:description" content="Registrate para evaluar tus sintomas y obtener tu codigo QR " />
+  <meta name="twitter:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- STYLES-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap">
+  <link rel="stylesheet" href="../css/styles-CoronApp/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/styles-CoronApp/mainCoronApp.css" />
+
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <!-- <script src="../js/js-coronApp/qrcode.min.js"></script> -->
+</head>
+
+<body>
+  <!-- BLACK-->
+  <div class="blackboxLoader">
+    <div class="Logo">
+      <h1 class="logoTitle">CoronApp</h1>
+      <div class="loadCoroApp">
+        <img class="iconoCoronApp" src="../images/coronApp/coronApp.svg" alt="Icono CoronApp" />
+        <img class="loadIconoCoronApp" src="../images/coronApp/loadCoroApp.svg" alt="carga de icono CoronApp" />
+      </div>
+      <p class="logoParagraph"><span>Coronavirus</span> en Colombia</p>
+    </div>
+  </div>
+
+  <!--Login-->
+  <div class="modal modalColor modalVisible" id="loginModal" tabindex="-1" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong id="alert"></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content shadow-sm">
+        <div class="modal-header">
+          <h3 class="modal-title">CoronaApp</h3>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-row">
+              <div class="col-12 col-sm-12 form-group">
+                <label class="labelForm" for="maillogin">Email</label>
+                <input class="form-control" id="maillogin" type="email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12 col-sm-12 form-group">
+                <label class="labelForm" for="passlogin">Contraseña</label>
+                <input class="form-control" id="passlogin" type="password" />
+                <a class="btn btnResetKey" data-dismiss="modal" data-toggle="modal"
+                  data-target="#recuperacionPW">¿Olvidaste tu contraseña?</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn secondButton" data-dismiss="modal">Registrarse</button>
+          <button type="submit" class="btn" id="login" data-dismiss="modal">Ingresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ingreso de correo para cambio de clave -->
+  <div class="modal modalColor" id="recuperacionPW" tabindex="-1" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+      <div class="modal-content shadow-sm">
+        <div class="modal-header">
+          <h3 class="modal-title">CoronaApp</h3>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-row">
+              <div class="col-12 col-sm-12 form-group">
+                <label class="labelForm" for="mailloginRec">Escribe tu correo electronico</label>
+                <input class="form-control" id="mailloginRec" type="email" />
+                <a class="link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Iniciar sesión</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn" id="recuperar">Recuperar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Envio exitoso de mail de confirmacion -->
+  <div class="modal modalColor" id="envioMailRecuperacion" tabindex="-1" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+      <div class="modal-content shadow-sm">
+        <div class="modal-header">
+          <h3 class="modal-title textGreenReporte">
+            <svg width="30" height="30" fill="none" class="mr-2">
+              <defs />
+              <path fill="#0CAA71"
+                d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15z" />
+              <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"
+                d="M23.1 9.75l-9.6 10.8-6-4.8" />
+            </svg>
+            Envio Exitoso!
+          </h3>
+        </div>
+        <div class="modal-body">
+          <p class="p-Weight">Hemos enviado un email para que recuperes tu contraseña.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-toggle="modal" id='envioCorreoCorrecto'>Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nueva Clave -->
+  <div class="modal modalColor" id="cambioClaveModal" tabindex="-1" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+      <div class="modal-content shadow-sm">
+        <div class="modal-header">
+          <h3 class="modal-title">CoronaApp</h3>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 350px">
+          <strong id="alertVerificoClave"></strong>
+
+        </div>
+
+        <div class="modal-body">
+          Escribe tu nueva contraseña
+          <form action="">
+            <div class="form-row">
+              <div class="col-lg-12 form-group">
+                <label class="labelForm" for="pass">Contraseña <span class="Required">*</span></label>
+                <input class="form-control" id="pass1" type="password" required="required" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-lg-12 form-group">
+                <label class="labelForm" for="pass">Verifica tu contraseña <span class="Required">*</span></label>
+                <input class="form-control" id="pass2" type="password" required="required" />
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn" id="cambioClave">Cambiar clave</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contraseña cambiada exitosamente -->
+  <div class="modal modalColor" id="contrasenaCambiada" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+      <div class="modal-content shadow-sm">
+        <div class="modal-header">
+          <h3 class="modal-title textGreenReporte">
+            <svg width="30" height="30" fill="none" class="mr-2">
+              <defs />
+              <path fill="#0CAA71"
+                d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15z" />
+              <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"
+                d="M23.1 9.75l-9.6 10.8-6-4.8" />
+            </svg>
+            Cambio de contraseña exitoso!
+          </h3>
+        </div>
+        <div class="modal-body">
+          <p class="p-Weight">Haz cambiado tu contraseña exitosamente.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-toggle="modal" id='cambioContrasenaExitoso'>Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER-->
+  <header class="container navCoronapp">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <img src="../images/logoPresidencia.png" class="headerLogo col-12 col-sm-6 col-lg-3" alt="Logo de presidencia" />
+      <h1 class="col-10 col-sm-4 col-lg-2">CoronApp</h1>
+
+    </nav>
+  </header>
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 350px">
+    <strong id="alertregister"></strong>
+
+  </div>
+
+
+  <!-- CONTENT-->
+  <main class="container mainContent">
+    <!-- FORMULARIO REGISTRO -->
+    <div class="mainRegistry row">
+      <div class="columnDiagnostic col-12 col-md-5 col-lg-3">
+        <h2>¡Hola!</h2>
+        <p>Reporta tu estado de salud para ayudarnos a entender el comportamiento del virus en el país. </p>
+      </div>
+
+      <div class="columnDiagnostic col-12 col-md-7 col-lg-5 border-left">
+        <form method="POST">
+          <div class="form-row">
+            <div class="col-lg-6 form-group">
+              <label class="labelForm" for="nombre">Nombre <span class="Required">*</span></label>
+              <input class="form-control" id="nombre" type="text" required="required" />
+            </div>
+            <div class="col-lg-6 form-group">
+              <label class="labelForm" for="apellido">Apellidos <span class="Required">*</span></label>
+              <input class="form-control" id="apellido" type="text" required="required" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-6 form-group">
+              <label class="labelForm" for="tipodoc">Tipo de documento</label>
+              <select class="form-control" id="tipodoc" required="required">
+
+                <option value="cc" selected>Cédula de Ciudadanía</option>
+                <option value="ti">Tarjeta de Identidad</option>
+                <option value="rc">Registro Civil</option>
+                <option value="ce">Cédula de Extranjería</option>
+                <option value="pep">PEP-Venezolanos</option>
+                <option value="passport">Pasaporte</option>
+                <option value="visa">Visa</option>
+
+              </select>
+            </div>
+            <div class="col-lg-6 form-group">
+              <label class="labelForm" for="ndoc">Número de documento <span class="Required">*</span></label>
+              <input class="form-control" id="ndoc" type="number" required="required" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-12 form-group">
+              <label class="labelForm" for="ncel">Número de celular</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <select id="indicativo">
+                    <option selected value=57>+57</option>
+                  </select>
+                </div>
+                <input class="form-control" id="ncel" type="number" />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-12 form-group">
+              <label class="labelForm" for="mail">Correo electrónico <span class="Required">*</span></label>
+              <input class="form-control" id="mail" type="text" required="required" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-lg-12 form-group">
+              <label class="labelForm" for="pass">Ingresa una contraseña <span class="Required">*</span></label>
+              <input class="form-control" id="pass" type="password" required="required" />
+            </div>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" id="gridCheck" type="checkbox" required="required" />
+            <label class="form-check-label smallText" for="gridCheck">Acepto los <a href="#!" data-toggle="modal"
+                data-target="#terminosCoronapp">términos de uso</a> de CoronApp,
+              para contribuir a la estrategia de prevención del Gobierno Colombiano,
+              frente al Coronavirus.
+            </label>
+            <p class="smallText mt-1 p-margin-bottom">Consulte la <a
+                href="https://www.ins.gov.co/Normatividad/PoliticasInstitucionales/politica-de-tratamiento-de-informacion-coronapp-colombia.pdf"
+                target="_blank">política
+                de
+                tratamiento de la información</a> de CoronApp.</p>
+          </div>
+          <div id="recaptcha"></div>
+          <button class="btn" type="submit" id="register" style="margin-top: 25px;">Registrarme</button>
+        </form>
+      </div>
+
+      <div class="columnDiagnostic col-12 col-md-12 col-lg-4 border-left lastContainerTablet" id="verifica"
+        style="display: none;">
+        <p class="subtitle">Verifica tu correo electrónico</p>
+        <p>Hemos enviado un mensaje de confirmación a tu correo electrónico, para que puedas realizar el reporte de tus
+          sintomas. Y así obtener el <span class="weight400">codigo QR</span>.</p>
+        <!-- <div class="form-row">
+          <div class="col-lg-12 form-group">
+            <label class="labelForm" for="codverificacion">Digitar el codigo</label>
+            <input class="form-control" id="codverificacion" type="text" required="required" />
+          </div>
+        </div>
+        <button class="btn" type="submit" id="validar">Validar</button> -->
+      </div>
+    </div>
+
+    <!--Terminacion Login-->
+    <div class="modal fade" id="intro" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+        <div class="modal-content shadow-sm">
+          <div class="modal-header">
+            <h3 class="modal-title">CoronaApp</h3>
+          </div>
+          <div class="modal-body">
+            <p class="labelForm">Ayúdanos a recolectar datos de los síntomas en Colombia.</p>
+            <p class="smallText mb-0">Tu información nos permite actuar ante el Coronavirus.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Súmate </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL - TERMINOS Y CONDICIONES -->
+    <div class="modal fade" id="terminosCoronapp" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content shadow-sm">
+          <div class="modal-header">
+            <h3 class="modal-title">Términos y condiciones</h3>
+          </div>
+          <div class="modal-body">
+            <p>1. SOBRE CORONAPP COLOMBIA
+
+              CoronApp Colombia “CoronApp” es la única aplicación móvil oficial del Gobierno nacional de la República de
+              Colombia que permite a los habitantes del territorio nacional, de manera gratuita (zero rating), tener
+              acceso a información actualizada y veraz sobre la situación y evolución de la enfermedad por coronavirus
+              que se denomina COVID-19, las recomendaciones para su prevención, así como el reporte, a través de
+              terminales móviles, del autodiagnóstico de su estado de salud, que permita orientar o canalizar a los
+              servicios de salud en su territorio, fortalecer la bioseguridad en diferentes ámbitos y las acciones en
+              salud pública a partir del uso colectivo de los datos (búsqueda de contactos, acciones barriales de oferta
+              de pruebas, delimitación de acciones de aislamiento, entre otras).
+
+              CoronApp hace parte de las herramientas de información utilizadas para enfrentar la crisis e impedir la
+              extensión de los efectos de la enfermedad por coronavirus COVID-19.
+
+              El uso de CoronApp es voluntario y el ciudadano será libre de utilizar esta aplicación. Ningún derecho
+              estará sujeto a que el ciudadano instale CoronApp.
+
+              La propiedad intelectual de la aplicación es del Instituto Nacional de Salud con el desarrollo de software
+              de la Agencia Nacional Digital.
+              Funcionalidades.
+
+              Los usuarios registrados pueden realizar las siguientes actividades en CoronApp:
+
+              Realizar el registro en el sistema.
+
+              Reportar síntomas de salud y de sus familiares, que podrían ser sugestivos de enfermedad por coronavirus
+              COVID-19.
+
+              Recibir recomendaciones según el estado de salud tras hacer el autodiagnóstico de salud.
+
+              Encontrar información para afrontar el aislamiento preventivo obligatorio de la mejor forma.
+
+              Obtener un estatus de movilidad a través de un código QR según las excepciones que dispone el Gobierno
+              colombiano en el marco de la emergencia
+
+              Acceder a información oficial de los Casos de Coronavirus en Colombia.
+
+              Autorizar el uso de su información de manera continua por diferentes agentes de salud pública y de
+              seguridad en el trabajo para efectos relacionados con el control de la epidemia.
+
+              Obtener información sobre diferentes centros de salud y líneas de atención.
+
+              Quienes no se registren podrán, igualmente, hacer uso de CoronApp consultando información oficial, centros
+              de salud, líneas de atención y recomendaciones para el cuidado.
+              RESPETO A LAS LEYES:
+
+              El usuario registrado deberá acceder a CoronApp solo para finalidades lícitas y relacionadas a la salud.
+              El usuario está de acuerdo en utilizar la aplicación solo para los debidos fines y en conformidad con los
+              presentes Términos y Condiciones y limitaciones legales, así como con la legislación aplicable en la
+              República de Colombia. Su acceso está prohibido en territorios donde el contenido sea considerado ilegal.
+              Aquellos que opten por acceder a esta aplicación desde otros lugares, lo harán a iniciativa propia y serán
+              responsables por el cumplimiento de las leyes locales aplicables. El contenido no deberá ser usado ni
+              exportado incumpliendo las leyes colombianas. La alteración no autorizada del contenido de esta aplicación
+              está expresamente prohibida.
+
+              Cualquier violación a estos Términos y Condiciones, abuso o mal uso de CoronApp, podrá ser investigada y
+              se podrán tomar todas las medidas e iniciar todas las acciones legales y extralegales en contra del
+              usuario para obtener la cesación de las conductas o los remedios e indemnizaciones a que haya lugar bajo
+              la ley aplicable. La violación de estos Términos y Condiciones puede resultar en responsabilidad civil y/o
+              penal para el usuario y en la cancelación o suspensión de la cuenta de usuario.
+
+
+              3. RESTRICCIONES DE USO:
+
+              El uso de CoronApp está permitido solamente para personas mayores de trece (13) años.
+
+              4. RESPONSABILIDAD POR EL CONTENIDO:
+
+              CoronApp y su contenido son propiedad del Instituto Nacional de Salud (INS), de ahora en adelante “la
+              Entidad”. La Entidad y los desarrolladores de CoronApp no son responsables por el contenido de cualquier
+              información, sea lícita o ilícita, eventualmente intercambiada por los usuarios mediante redes sociales o
+              para CoronApp.
+
+              El Instituto Nacional de Salud es el operador del sistema de vigilancia en salud pública que integra
+              diferentes fuentes de información, entre las cuales se encuentra Sivigila que, a partir de una red de
+              todas
+              las instituciones de salud, capta los casos probables de COVID-19. CoronApp es una estrategia de
+              vigilancia
+              participativa en que el individuo informa su situación de salud y genera alertas para las secretarias de
+              salud, quienes a través de esa red de instituciones de Sivigila podría abordar al individuo para evaluar
+              su
+              riesgo real de enfermedad por coronavirus COVID-19. Así mismo permite identificar zonas en donde el riesgo
+              para contagiar la enfermedad es mayor y junto a información de otras fuentes, da información útil a los
+              tomadores de decisiones.
+
+              Los comentarios compartidos por el usuario mediante redes sociales no representan la opinión de las
+              instituciones involucradas en el proyecto y la responsabilidad es del autor del mensaje. El usuario está
+              de
+              acuerdo en que es el único responsable por su propia conducta y por la veracidad de la información
+              suministrada mientras utilice el servicio y que es responsable por las consecuencias que provengan del
+              suministro intencional de datos incorrectos. El usuario está de acuerdo que al usar CoronApp no publicará,
+              enviará, distribuirá ni divulgará contenido o información de carácter difamatorio, obsceno o ilícito,
+              inclusive información de propiedad exclusiva perteneciente a otras personas o entidades, así como marcas
+              registradas o información protegida por derechos de autor, sin la expresa autorización del propietario de
+              esos derechos. El uso de CoronApp es personal e intransferible. Se prohíbe suplantar la identidad de otro
+              usuario en el uso de CoronApp. Usted es responsable por el contenido que los individuos no autorizados
+              produzcan al usar esta aplicación utilizando sus credenciales de acceso bajo su autorización. Esta regla
+              no
+              se aplica a los casos de violación u otros problemas de seguridad que puedan ser detectados en la
+              aplicación
+              o producidos por ataques cibernéticos.
+
+              Solo la información proporcionada por la Presidencia de la República, el Ministerio de Salud y Protección
+              Social y el Instituto Nacional de Salud debe ser considerada oficial para la divulgación pública en lo que
+              tiene que ver con los datos estadísticos relacionados con la pandemia de enfermedad por coronavirus -
+              COVID-19.
+
+              Los datos recolectados mediante CoronApp provienen de los usuarios que voluntariamente proporcionaron la
+              información y que tienen acceso a los dispositivos móviles con especificaciones tecnológicas mínimas
+              (Dispositivos móviles con sistema operativo Android 5 o superior y sistema operativo iOS 10.3 o superior).
+
+              Los resultados del ejercicio de Autodiagnóstico de CoronApp en ningún caso podrán considerarse como un
+              diagnóstico médico profesional para detección del COVID-19. El Autodiagnóstico es una guía de
+              identificación
+              de síntomas y signos de alarma que puedan estar relacionados con el coronavirus COVID-19, pero en ningún
+              caso reemplaza la atención médica ni las pruebas diagnósticas realizadas por el personal médico
+              autorizado,
+              por esta razón, una de las recomendaciones es la búsqueda de atención médica.
+
+              Los canales de atención establecidos por el Gobierno nacional para detección de la enfermedad por
+              coronavirusCOVID-19 son las líneas telefónicas 192 (desde un celular) o 01 8000-955590 (línea nacional).
+              Así
+              mismo, se ha establecido que cada secretaría de salud y cada EPS debe tener líneas habilitadas para la
+              atención específica en el tema.
+
+              La línea 192 es la línea de atención telefónica oficial del Gobierno nacional que permite a los habitantes
+              del territorio nacional tener acceso a información actualizada sobre emergencias sanitarias, su evolución
+              en
+              el país, así como solicitar canalización para valoración médica.
+
+              La Entidad no es responsable por el uso indebido que terceros puedan hacer del modelo de formulario de
+              preguntas y respuestas del Autodiagnóstico de CoronApp.
+
+              5. ACCESIBILIDAD AL CONTENIDO:
+
+              La Entidad no garantiza que esta aplicación sea parcial o completamente funcional para el uso fuera del
+              territorio nacional. Si usted opta por acceder a la aplicación desde otros países, usted lo hará por su
+              propia iniciativa y su propio riesgo. Usted es responsable por el cumplimiento de las leyes locales y en
+              la
+              medida en que éstas sean aplicables, usted está de acuerdo específicamente en cumplir todas las leyes
+              aplicables relativas a la transmisión de datos técnicos exportados a partir de ese lugar.
+
+              6. PROPIEDAD INTELECTUAL:
+
+              El Instituto Nacional de Salud (INS) es propietaria del derecho de autor de CoronApp y el contenido
+              producido y presentado en la aplicación. Esta premisa no se aplica a la información considerada como de
+              dominio público o de utilidad pública. Todas las demás marcas comerciales, marcas de servicio, nombres y
+              logotipos que aparecen en CoronApp son de propiedad de sus respectivos propietarios. El desarrollo y
+              producción del software está bajo la responsabilidad de la Agencia Nacional Digital.
+
+              CoronApp es una modificación a software basado en open source bajo la licencia internacional GNU General
+              Public License, versión 3 (GPL-3.0) (https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+              Los derechos de uso del contenido y de los informes generados por la aplicación son cedidos por los
+              desarrolladores, en especial aquellos que provienen de los términos de la licencia Creative Commons –
+              Atribución/Reconocimiento - No Comercial 4.0 Internacional
+              (https://creativecommons.org/licenses/by-nc/4.0/legalcode.es).
+
+              La adquisición de los derechos para publicación de la versión de CoronApp para iOS y Android en sus
+              respectivas tiendas es de propiedad del INS.
+
+              7. TRATAMIENTO DE DATOS PERSONALES:
+
+              Datos del Responsable del tratamiento:
+              Nombre o razón social: Instituto Nacional de Salud (INS)
+
+              Domicilio o dirección: Avenida Calle 26 No 51-20 CAN, Bogotá D.C, Colombia
+
+              Correo electrónico: contactenos@ins.gov.co
+
+              Teléfono:
+
+              (57 +1) 3244576
+
+              Teléfono Conmutador: (57 +1) 2207700 Opción 2
+
+              Línea Gratuita Nacional: 018000113400
+
+              Otros datos de contacto: A través del chat dispuesto en la página web: www.ins.gov.co
+
+              Finalidad del tratamiento:
+
+              CoronApp recolecta datos públicos, semiprivados, privados y sensibles de los usuarios, los cuales serán
+              tratados por la Entidad únicamente para realizar la vigilancia en salud pública y el despliegue de medidas
+              en las diferentes etapas para enfrentar la crisis ocasionada por el COVID-19, específicamente para:
+
+              Crear y activar el registro de usuario en CoronApp;
+
+              Permitir al usuario el ingreso a CoronApp y uso de sus funcionalidades;
+
+              Realizar reporte del estado de salud (síntomas, factores de riesgo y enfermedades correlacionadas al
+              incremento de riesgo de COVID-19) de los usuarios y sus familiares en tercer grado de consanguinidad y
+              primero de afinidad que viven en la misma vivienda del usuario, conforme lo establecido en el inciso c)
+              del
+              artículo 10 de la Ley 1581 de 2012. El reporte del estado de salud de menores de edad sólo podrá ser
+              realizado por sus padres o representantes legales;
+
+              Monitorear síntomas, signos de alarma y riesgos y vulnerabilidad relacionados con la enfermedad por el
+              nuevo
+              coronavirus COVID-19;
+
+              Acceder a la conexión Bluetooth del dispositivo para compartir con el INS la cercanía, en los últimos 21
+              días, con otros dispositivos móviles que utilizan CoronApp, con la finalidad de saber si una persona
+              confirmada con COVID-19 estuvo cerca del usuario e identificar potenciales cadenas de contagio del
+              COVID-19.
+              Esta funcionalidad se encuentra desactivada por defecto y solo se activará para los usuarios confirmados
+              por
+              COVID-19 y aquellos que tengan síntomas muy probables de contagio, aún así la información será enviada
+              solo
+              cuando los usuarios deseen compartir su historial de cercanías a través del Menú de CoronApp;
+
+              Acceder a la localización geográfica de usuarios y la ubicación del dispositivo únicamente para el envío
+              del
+              reporte de salud al momento que el usuario realiza el autodiagnóstico dispuesto en CoronApp, con la
+              finalidad de identificación de alertas tempranas y despliegue de esfuerzos de diagnóstico, tales como:
+              identificación de atención previa en el servicio de salud, verificación del estado de salud por parte de
+              las
+              Entidades Administradoras de Planes de Beneficios (EAPB), canalización precisa de casos potenciales que
+              requieren ser dirigidos a centros asistenciales para iniciar su atención, identificación de posibles
+              conglomerados de casos, en tiempo y lugar, que faciliten priorizar la acción de las autoridades
+              sanitarias,
+              identificar potenciales cadenas de contagio, entre otras. Esta funcionalidad se encuentra desactivada y
+              solo
+              se activa al momento de reportar el Autodiagnóstico de salud, para ubicar el lugar desde donde se realiza
+              el
+              reporte, para efectos de las finalidades antes mencionadas;
+
+              Envío de comunicaciones y código de verificación para el registro de usuario a través de SMS;
+
+              Generar el estatus de movilidad, a partir del estado de salud reportado y conforme a las excepciones
+              establecidas en la Resolución No. 464 de 2020 del Ministerio de Salud y Protección Social y en el Decreto
+              1168 de 2020, o aquellas que las modifiquen o complementen;
+
+              Permitir la consulta por parte de las autoridades del estatus de movilidad, a través de un código QR;
+
+              Transferir a las entidades que el usuario voluntariamente seleccione (ARL, Aseguradora de salud y/o
+              empleador), los datos de (i) nombres y apellidos, (ii) tipo y número de documento, (iii) el nivel de
+              riesgo
+              (Normal, Advertencia o Alerta) según el autodiagnóstico reportado en CoronApp, y (iv) localización
+              geográfica del usuario y el dispositivo al momento de realizar el reporte del autodiagnóstico en CoronApp,
+              con las finalidades de que la(s) entidad(es) seleccionada(s) pueda(n):
+
+              Gestionar los riesgos en los ambientes laborales y demás actividades económicamente productivas, en el
+              marco
+              del Sistema General de Riesgos Laborales, para proteger a la población trabajadora y sus familias de
+              COVID-19.
+
+              Gestionar la atención y prestación de servicios de salud en respuesta a posibles casos de enfermedad por
+              el
+              COVID-19.
+
+              Dar aplicación a los protocolos, procedimientos y lineamientos definidos por el Ministerio de Salud y
+              Protección Social y el Ministerio de Trabajo para la preparación, respuesta y atención de casos de
+              enfermedad por el COVID-19, en el marco del Sistema de Gestión de la Seguridad y Salud en el Trabajo
+              SG-SST.
+
+              Crear y mantener la base de datos de los usuarios de CoronApp;
+
+              La aplicación puede solicitar acceso a los siguientes permisos de su dispositivo móvil:
+
+              Llamar directamente a números de teléfono, con la finalidad de que el usuario pueda realizar llamadas a
+              las
+              líneas de atención establecidas para detección del COVID-19, directamente desde la aplicación.
+
+              Acceso a la red, ver estado de red y conectarse a redes wifi, con la finalidad de actualización de las
+              cifras que muestra la aplicación, envío de los reportes de salud de los usuarios al servidor, entre otras
+              asociadas a las funcionalidades de la aplicación.
+
+              El suministro de datos sensibles (datos relativos a la salud, geolocalización y datos de menores de edad)
+              es
+              de carácter facultativo y no obligatorio por parte de los usuarios de CoronApp. El tratamiento de dichos
+              datos se realizará para las finalidades antes establecidas y para la funcionalidad de CoronApp en las
+              diferentes etapas para afrontar el COVID-19.
+
+              Localización geográfica y detección de cercanía.
+
+              Con el fin de evitar la propagación del virus, CoronApp puede realizar:
+
+              Localización geográfica de usuarios y la ubicación del dispositivo, la cual es activada a través del GPS
+              del
+              dispositivo móvil, únicamente para el envío del reporte de salud al momento que los usuarios realizan el
+              autodiagnóstico dispuesto en CoronApp. Esta información, utilizada únicamente por las autoridades
+              sanitarias, permite la generación de alertas tempranas y despliegue de esfuerzos de diagnóstico, tales
+              como:
+              identificación de atención previa en el servicio de salud, verificación del estado de salud por parte de
+              las
+              Entidades Administradoras de Planes de Beneficios (EAPB), canalización precisa de casos potenciales que
+              requieren ser dirigidos a centros asistenciales para iniciar su atención, identificación de posibles
+              conglomerados de casos, en tiempo y lugar, que faciliten priorizar la acción de las autoridades
+              sanitarias,
+              identificar potenciales cadenas de contagio, entre otras. Esta funcionalidad se encuentra desactivada y
+              solo
+              se activa al momento de reportar el Autodiagnóstico de salud, para ubicar el lugar desde donde se realiza
+              el
+              reporte, para efectos de las finalidades antes mencionadas
+
+              Acceder a la conexión Bluetooth del dispositivo para compartir con el INS la cercanía, en los últimos 21
+              días, con otros dispositivos móviles que utilizan CoronApp, con la finalidad de saber si una persona
+              confirmada con COVID-19 estuvo cerca del usuario e identificar potenciales cadenas de contagio del
+              COVID-19.
+              Esta funcionalidad se encuentra desactivada por defecto y solo se activará para los usuarios confirmados
+              por
+              COVID-19 y aquellos que tengan síntomas muy probables de contagio, aún así la información será enviada
+              solo
+              cuando los usuarios deseen compartir su historial de cercanías a través del Menú de CoronApp.
+
+              CoronApp no recopila información sobre los movimientos y actividades de un usuario mediante el uso de
+              sensores de ubicación (tales como GPS), puntos de acceso Wifi y estaciones de base, a menos que
+              voluntariamente lo decida cada usuario de CoronApp.
+
+              Generación Estatus de movilidad.
+              Para generar el estatus de movilidad, el usuario debe:
+              Contar con un autodiagnóstico de las últimas 24 horas;
+
+              Declarar que la información brindada es verídica;
+
+              Seleccionar la excepción principal que le aplica para circular, conforme a las excepciones establecidas en
+              la Resolución No. 464 de 2020 del Ministerio de Salud y Protección Social y en el Decreto 1168 de 2020, o
+              aquellas que las modifiquen o complementen.
+
+              La generación del Estatus de movilidad se hace bajo gravedad de juramento del usuario que toda la
+              información proporcionada es verídica, y autoriza que las autoridades verifiquen los datos proporcionados
+              en
+              dicho Estatus, por cualquier medio, y en caso de inexactitud se apliquen las sanciones establecidas en la
+              ley.
+
+              Datos anonimizados
+              Una vez recolectados los datos personales, por regla general se utilizarán herramientas para que sean
+              anónimos, que no esté asociada o vinculada a una persona en particular. En caso de ser necesario circular
+              esa información, se remitirán los datos estrictamente necesarios y anonimizados de tal manera que no se
+              pueda identificar al titular del dato.
+
+              El uso de estos datos tiene como propósito la operación de todo el Sistema de Vigilancia en Salud Pública
+              en
+              sus diferentes niveles. Los datos del Sistema de Vigilancia son utilizados para apoyar las estrategias de
+              vigilancia a nivel nacional, y a su vez serán tratados para el estudio y análisis del comportamiento de la
+              infección respiratoria del país con fines científicos.
+
+              Excepcionalmente se tratará la información de forma no anonimizada cuando es rigurosamente necesario
+              conocer
+              la identidad del titular del dato y conforme a lo dispuesto en la Ley 1581 de 2012 y sus decretos
+              reglamentarios.
+
+              Beneficio de Mínimo Vital de Conectividad – Plan Prevenir Conectados:
+
+              Si usted es usuario de una línea en modalidad prepago y quiere acceder al beneficio de una recarga de
+              recursos para los servicios de voz (100 minutos a cualquier destino nacional) e internet móvil (1GB), es
+              necesario que tenga en cuenta las siguientes condiciones:
+
+              El beneficio solo podrá recibirlo si cuenta con una línea activa en modalidad prepago con una antigüedad
+              superior a dos (2) meses al momento de la descarga de CoronApp.
+
+              El beneficiario no debe contar con ninguna línea en modalidad pospago asociada a su documento de
+              identidad.
+
+              Se requiere que la línea en la modalidad prepago a la cual se asignará el beneficio esté asociada a un
+              registro válido en la aplicación CoronApp. Aplicará para nuevos registros de la siguiente forma:
+
+              Usuarios móviles prepago Claro y Tigo: a partir del 22 de abril de 2020.
+
+              Usuarios móviles prepago Flash mobile: a partir del 23 de abril de 2020.
+
+              Usuarios móviles Movistar y Avantel: a partir del 27 de abril de 2020.
+
+              Próximamente se informará en los canales digitales del Ministerio de Tecnologías de la Información y las
+              Comunicaciones los operadores de telefonía móvil que se continuarán sumando a este Plan.
+
+              Una vez realizado el registro en CoronApp, en un máximo de 48 horas el usuario recibirá un mensaje de
+              texto
+              en su celular con la confirmación del beneficio. Si esto no sucede en este tiempo el usuario debe
+              contactarse con su operador de telefonía móvil.
+
+              El beneficio no aplica para usuarios en modalidad pospago.
+
+              El beneficio podrá consumirse en un mes a partir del momento de su confirmación por parte del operador de
+              telefonía móvil o hasta que se consuman los recursos, lo que suceda primero.
+
+              Esta iniciativa estará vigente hasta el 31 de mayo o hasta agotar la meta de líneas móviles prepago a
+              beneficiar, es decir, hasta 5 millones de usuarios.
+
+              El beneficio solo será aplicado una vez por número telefónico e identificación registrada en CoronApp.
+
+              Recuerde que SOLO si cumple con los requisitos antes mencionados podrá ser uno de los 5 millones de
+              beneficiarios, por lo cual la Entidad tratará sus datos de nombre, número de documento y número de celular
+              para verificar la elegibilidad para optar por el beneficio antes mencionado.
+
+              Todos los datos suministrados en CoronApp, incluyendo datos sensibles y de menores de edad, son tratados
+              conforme a lo dispuesto en la Ley 1581 de 2012 y sus decretos reglamentarios y conforme a lo estipulado en
+              la “Política para la Protección de Datos Personales” del Instituto Nacional de Salud, establecida mediante
+              Resolución No. 1607 de 2014, o aquella que la modifique o derogue, la cual puede ser consultada aquí:
+              https://bit.ly/2A5PBym, y la “Política de tratamiento de información relacionada con CoronApp Colombia” la
+              cual puede ser consultada aquí: https://bit.ly/3bSLB1y.
+
+              El tiempo del tratamiento de los datos recolectados a través de CoronApp, toda vez que hacen parte del
+              sistema de vigilancia de salud pública, es determinado por las actividades que despliegue el Ministerio de
+              Salud y Protección Social y el Instituto Nacional de Salud para afrontar la enfermedad del COVID-19, así
+              como para el análisis del comportamiento del virus que deban realizar las entidades de salud del país.
+
+              Una vez finalice la necesidad para la cual fueron recolectados los datos, la información que no requiera
+              conservarse para fines históricos, científicos o estadísticos (información anonimizada), será suprimida
+              según los procedimientos de eliminación de documentos establecidos por el Instituto Nacional de Salud.
+
+              De conformidad con lo establecido en la Ley 1581 de 2012 de protección de datos personales, se podrá
+              suministrar información a las entidades públicas o administrativas que en el ejercicio de sus funciones
+              legales así lo requieran, o a las personas establecidas en el artículo 13 de la referida ley.
+
+              La información personal a la que acceden las Entidades públicas o administrativas es obtenida directamente
+              del usuario a partir de su registro o a través de la consulta de bases de datos de fuentes oficiales.
+
+              Los datos proporcionados por el usuario deben ser veraces, completos, exactos, actualizados, comprobables
+              y
+              comprensibles y en consecuencia el usuario asume toda la responsabilidad sobre la falta de veracidad o
+              exactitud de éstos.
+
+              Procedimiento para que los titulares puedan ejercer sus derechos
+
+              Los titulares podrán ejercer sus derechos de conocer, actualizar, rectificar y/o suprimir sus datos
+              personales. La solicitud de supresión de la información no procederá cuando el usuario tenga un deber
+              legal
+              de permanecer en la base de datos.
+
+              Los derechos de los Titulares, podrán ejercerse por las siguientes personas legitimadas de conformidad con
+              el artículo 20 del decreto 1377 de 2013 (incorporado en el Decreto 1074 de 2015):
+
+              Por el Titular, quien deberá acreditar su identidad en forma suficiente por los distintos medios que le
+              ponga a disposición el INS.
+
+              Por sus causahabientes, quienes deberán acreditar tal calidad.
+
+              Por el representante y/o apoderado del Titular, previa acreditación de la representación o apoderamiento.
+
+              Por estipulación a favor de otro o para otro.
+
+              Los derechos de los niños, niñas o adolescentes se ejercerán por las personas que estén facultadas para
+              representarlos.
+
+              Todas las consultas y reclamos deberán presentarse a través de los canales de atención oficiales
+              dispuestos
+              por el INS, los cuales son:
+
+              Ventanilla única de correspondencia en la dirección: Avenida calle 26 No 51-20 Can, Bogotá D.C, Colombia,
+              con atención de lunes a viernes en horario de 8 am a 4 pm.
+
+              Aplicativo de PQRSD, el cual puede ser encontrado en la ruta: www.ins.gov.co/atencionalciudadano, en el
+              espacio: “Formulario de contacto”.
+
+              A través de las líneas de atención al ciudadano: (PQRSD): (57 +1)3244576
+
+              Teléfono Conmutador: (57 +1)2207700 Opción 2; Línea Gratuita Nacional: 018000113400 con atención de lunes
+              a
+              viernes en horario de 8 am a 4 pm.
+
+              A través del chat dispuesto en la página web: www.ins.gov.co
+
+              Enviando un correo electrónico al email: contactenos@ins.gov.co
+
+              Una vez canalizados por medio de estos canales habilitados por el INS, se adoptarán mecanismos de prueba
+              de
+              la radicación y trámite de los mismos.
+
+              Las consultas o reclamos deben presentarse mediante solicitud dirigida al INS que contenga la siguiente
+              información:
+
+              Nombre completo (nombres y apellidos);
+
+              Tipo y número de documento de identificación;
+
+              Copia de documento de identificación;
+
+              Datos de contacto y medio para recibir respuesta a la solicitud (dirección física y/o correo electrónico)
+              e
+              informar sobre el estado del trámite;
+
+              Motivo(s) o hechos(s) que da(n) lugar a la solicitud con una descripción precisa y completa de los hechos
+              que dan lugar al reclamo.
+
+              Documentos y demás pruebas pertinentes que quiera hacer valer.
+
+              En caso de presentar el reclamo a nombre de un tercero, deberá remitir:
+
+              Nombre completo (nombres y apellidos) del tercero que autoriza;
+
+              Copia de documento de identificación del tercero que autoriza;
+
+              El documento de autorización del titular (tercero que autoriza) para este trámite.
+
+              Firma (si aplica).
+
+              8. SEGURIDAD DE LA INFORMACIÓN:
+
+              CoronApp utiliza diferentes medidas técnicas y procedimientos de seguridad de la información, tendientes a
+              garantizar la integridad, disponibilidad y confidencialidad de todos los datos personales suministrados en
+              CoronApp (incluyendo datos sensibles y de menores de edad). Así mismo, garantizar que se evite su
+              adulteración, pérdida, consulta, uso, acceso o divulgación no autorizada o fraudulenta. Para ello se
+              cuenta
+              con los siguientes controles:
+
+              Seguridad de acceso: La información de acceso proporcionada no será revendida a terceros, ni reutilizada
+              con
+              otros fines a los mencionados anteriormente.
+
+              Recopilación de la información: CoronApp solicita información de salud, la cual es almacenada en la
+              infraestructura dispuesta para ello, de manera segura.
+
+              Acceso a la red y dispositivos: El usuario es responsable del acceso a la red de datos necesaria para
+              utilizar CoronApp y del uso que realice de ésta.
+
+              El usuario es el responsable de adquirir y actualizar el hardware compatible o los dispositivos necesarios
+              para acceder a y utilizar CoronApp.
+
+              Los procesos de seguridad de la información están bajo la producción y desarrollo de la Agencia Nacional
+              Digital.
+
+              9. LEYES, REGLAMENTOS, DERECHOS Y DEBERES:
+
+              Es obligación de la Entidad, sus funcionarios o empleados, contratistas y terceros que obran en nombre de
+              la
+              Entidad, así como de los usuarios de CoronApp, cumplir todas las leyes y reglamentos aplicables y
+              vigentes.
+
+              En caso de disputa, controversia o conflicto de interpretación de cualquier disposición de los presentes
+              Términos y Condiciones, o del uso que el usuario haga de CoronApp, se resolverá en primer término mediante
+              mecanismos de arreglo directo. En caso de fracasar los anteriores mecanismos, las diferencias se someterán
+              a
+              los jueces de la República de Colombia.
+
+              10. MODIFICACIONES:
+
+              La Entidad se reserva el derecho de realizar actualizaciones a CoronApp, como la creación y modificación
+              de
+              funcionalidades, con notificación de las novedades en la tienda de descargas al momento de publicar una
+              nueva versión de la aplicación.
+
+              De igual forma, la Entidad se reserva el derecho a modificar los presentes Términos y Condiciones, en
+              cualquier momento, previo aviso y solicitud de aceptación del usuario a través de CoronApp.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Aceptar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL - TRATAMIENTO DE LA INFORMACIÓN -->
+    <!-- <div class="modal fade" id="politicas" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content shadow-sm">
+          <div class="modal-header">
+            <h3 class="modal-title">Tratamiento de la información</h3>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, illo? Deleniti modi error, eos id
+              velit aspernatur. Dolor unde, accusamus obcaecati maiores, ex iste pariatur vel vero, aliquid assumenda
+              dolore.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Aceptar </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div id="qrcode"></div> -->
+  </main>
+  <!-- FOOTER-->
+  <footer>
+    <p>© Copyright 2020 – Todos los derechos reservados Gobierno de Colombia.</p>
+  </footer>
+
+  <!-- SCRIPT-->
+  <script src="../js/js-coronApp/vendor/jquery-3.5.1.min.js"></script>
+  <script src="../js/js-coronApp/vendor/bootstrap.min.js"></script>
+  <script src="../js/js-coronApp/vendor/vue.min.js"></script>
+  <script src="../js/js-coronApp/featuresCoronApp.js"></script>
+  <script src="../js/js-coronApp/register.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+</body>
+
+</html>
