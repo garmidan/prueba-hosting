@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" href="../images/favicon.ico" />
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+  <!-- SEO TAGS -->
+  <title>Diagnostico - CoronApp</title>
+  <meta name="description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <!-- Open Graph data-->
+  <meta property="og:title" content="Diagnostico - CoronApp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" />
+  <meta property="og:description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <meta property="og:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- Twitter Card data-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@infopresidencia" />
+  <meta name="twitter:creator" content="@infopresidencia" />
+  <meta name="twitter:title" content="Diagnostico - CoronApp" />
+  <meta name="twitter:description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <meta name="twitter:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- STYLES-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap">
+  <link rel="stylesheet" href="../css/styles-CoronApp/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/styles-CoronApp/mainCoronApp.css" />
+</head>
+
+<body>
+  <!-- BLACK-->
+  <div class="blackboxLoader">
+    <div class="Logo">
+      <h1 class="logoTitle">CoronApp</h1>
+      <div class="loadCoroApp">
+        <img class="iconoCoronApp" src="../images/coronApp/coronApp.svg" alt="Icono CoronApp" />
+        <img class="loadIconoCoronApp" src="../images/coronApp/loadCoroApp.svg" alt="carga de icono CoronApp" />
+      </div>
+      <p class="logoParagraph"><span>Coronavirus</span> en Colombia</p>
+    </div>
+  </div>
+
+  <!-- HEADER-->
+  <header class="container navCoronapp">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <img src="../images/logoPresidencia.png" class="headerLogo col-12 col-sm-6 col-lg-3" alt="Logo de presidencia" />
+      <h1 class="col-10 col-sm-4 col-lg-2">CoronApp</h1>
+      <button class="navbar-toggler col-2 col-sm-2" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id='cerrarSesion'>
+              <img src="../images/coronApp/logout.svg" alt="Icono de cerrar sesión" />
+              Cerrar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENT-->
+  <main class="container mainContent" id="app">
+    <!-- id="app" Indica el contenedor donde se va a realizar el renderizado -->
+    <section class="mainDiagnostic row">
+
+      <!-- Saludo -->
+      <div class="columnDiagnostic col-12 col-md-6 col-lg-3">
+        <h2 id="datosuser"></h2>
+        <p>Genera tu <b>código QR</b> para informar el cumplimiento de tu evaluación y así obtener recomendaciones de
+          autocuidado.</p>
+      </div>
+
+      <!-- Indicaciones -->
+      <div class="columnDiagnostic col-12 col-md-6 col-lg-3 border-left">
+        <p class="subtitle">Contesta las preguntas para identificar síntomas asociados al Coronavirus</p>
+        <p class="p-margin-bottom">Recibe recomendaciones de acuerdo con el nivel de riesgo que identifiquemos</p>
+        <div class="indicatorColors">
+          <div class="indicatorGreen">
+            <div class="circleIndicator circleGreen"></div>
+            <p>Cuida tu salud</p>
+          </div>
+          <div class="indicatorYellow">
+            <div class="circleIndicator circleYellow"></div>
+            <p>Atento a los síntomas</p>
+          </div>
+          <div class="indicatorRed">
+            <div class="circleIndicator circleRed"></div>
+            <p>Llama al médico</p>
+          </div>
+        </div>
+        <a class="btn" id="empezar" type="button" v-on:click="mostrarpreguntas">Empezar</a>
+        <!-- v-on:click="isHidden = true" -->
+        <!-- v-on:click="isHidden = true" -->
+      </div>
+
+      <!-- Preguntas -->
+      <div style="display: none;" id="app"
+        class="columnDiagnostic col-12 col-md-12 col-lg-6 border-left lastContainerTablet" v-for="item in preguntas"
+        v-bind:class="'order-' + item.order" v-bind:id="item.id">
+        <!-- v-for Declarar un ciclo con los items del listado preguntas  |  v-show="isHidden == true" Mostrar elementos cuando... -->
+        <!-- v-bind:class="'order-' + item.order"  De esta forma se pone una clase combinada entre texto y variable, para este caso, se usa para darle orden al bootstrap -->
+        <p class="subtitle"> {{ item.descripcion }}</p> <!-- {{ item }} Interpolación de variables -->
+        <ul class="listResponse row">
+          <li class="itemResponse form-check col-12" v-for="itemRes in item.respuestas"
+            v-bind:class="'order-' + itemRes.order">
+            <!-- Se pueden declarar nuevos items de listas más internas -->
+            <input class="form-check-input" v-on:click="deseleccion(item.id, item.order)" type="checkbox"
+              v-bind:value="itemRes.texto" v-bind:name="itemRes.texto" v-bind:id="itemRes.id" />
+            <!-- v-bind: Interpolar atributos -->
+            <label class="form-check-label" v-bind:for="itemRes.id"> {{ itemRes.texto }} </label>
+          </li>
+        </ul>
+        <button class="btn" v-bind:id="item.order" disabled
+          v-on:click="seleccionadas(item.id,item.order)">Continuar</button>
+      </div>
+
+      <!-- reporte exitoso -->
+      <div class="modal fade" id="reporteGeneral" tabindex="-1" aria-hidden="true" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+          <div class="modal-content shadow-sm">
+            <div class="modal-header">
+              <h3 class="modal-title textGreenReporte">
+                <svg width="30" height="30" fill="none" class="mr-2">
+                  <defs />
+                  <path fill="#0CAA71"
+                    d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15z" />
+                  <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                    stroke-width="3" d="M23.1 9.75l-9.6 10.8-6-4.8" />
+                </svg>
+                Reporte Exitoso!
+              </h3>
+            </div>
+            <div class="modal-body">
+              <p class="p-Weight">Los síntomas que reportaste, se han guardado correctamente.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" data-toggle="modal"
+                v-on:click="valorDiagnostico()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ¡Cuida tu salud! - VERDE -->
+      <div class="modal fade" v-bind:id="itemDiagVerde.id" tabindex="-1" aria-hidden="true"
+        v-for="itemDiagVerde in diagnosticos" v-if="itemDiagVerde.valor == 'NORMAL'" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+          <div class="modal-content shadow-sm">
+            <div class="modal-header">
+              <h3 class="modal-title textGreen">{{ itemDiagVerde.texto }}</h3>
+            </div>
+            <div class="modal-body">
+              <p class="subtitle">{{ itemDiagVerde.descripcion }}</p>
+              <div class="accordionGreen row" v-bind:id="'accordion-' + itemDiagVerde.id">
+                <div class="card col-12" v-for="itemCategoriasVerde in itemDiagVerde.categorias"
+                  v-bind:class="'order-' + itemCategoriasVerde.orden">
+                  <button class="card-header" id="cardModalGreen" data-toggle="collapse"
+                    v-bind:data-target="'#' + itemCategoriasVerde.slug" aria-expanded="true"
+                    v-bind:aria-controls="itemCategoriasVerde.slug">
+                    <i v-bind:class="'iconm-' + itemCategoriasVerde.slug"></i>
+                    <p class="smallText p-Weight">
+                      {{ itemCategoriasVerde.texto }}
+                    </p>
+                    <i class="iconm-arrow-bottom"></i>
+                  </button>
+
+                  <div v-bind:id="itemCategoriasVerde.slug" class="collapse listCollapse"
+                    aria-labelledby="cardModalGreen" v-bind:data-parent="'#accordion-' + itemDiagVerde.id">
+                    <ul class="card-body">
+                      <li class="smallText" v-for="itemRecomendacionesVerde in itemCategoriasVerde.recomendaciones">
+                        {{ itemRecomendacionesVerde.texto }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" data-toggle="modal" v-on:click="valorViaje()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ¿Vas a realizar un viaje? -->
+
+      <div class="modal fade" id="realizarViaje" tabindex="-1" aria-hidden="true" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md">
+          <div class="modal-content shadow-sm">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="max-width: 350px">
+              <strong id="alertViaje"></strong>
+
+            </div>
+            <div class="modal-header">
+              <h3 class="modal-title">Datos del viaje</h3>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <!-- <div class="form-row">
+                  <div class="col-sm-12 form-group">
+                    <select class="form-control" id="viajeSiNo" required="required">
+                      <option value="">Si</option>
+                      <option value="">No</option>
+                    </select>
+                  </div>
+                </div> -->
+                <div class="form-row">
+                  <!-- <div class="col-sm-6 form-group">
+                    <label class="labelForm" for="tipoViaje">Tipo de viaje</label>
+                    <select class="form-control" id="tipoViaje">
+                      <option value="">Aéreo</option>
+                      <option value="">Terrestres</option>
+                    </select>
+                  </div> -->
+
+
+                  <div class="col-sm-6 form-group">
+                    <label class="labelForm" for="fechaVuelo" required>Fecha de vuelo</label>
+                    <input class="form-control" id="fechaVuelo" type="date" />
+                    <script>
+                      let fechaVuelo = document.getElementById('fechaVuelo');
+                      fechaVuelo.min = new Date().toISOString().split("T")[0];
+                    </script>
+                  </div>
+                  <div class="col-sm-6 form-group">
+                    <label class="labelForm" for="tipoVuelo">Tipo de vuelo</label>
+
+                    <select class="form-control" id="tipoVuelo" required>
+                      <option id="0">Nacional</option>
+                      <option id="1">Internacional</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-sm-12 form-group">
+                    <label class="labelForm" for="aerolinea">Aerolínea</label>
+                    <select class="form-control" id="aerolinea">
+                      <option v-for="item in aerolineas" v-bind:id="item.id" v-bind:value="item.id">{{item.name }}
+                      </option>
+                      <!-- <option value="">Avianca</option>
+                      <option value="">LATAM Airlines</option> -->
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-sm-9 form-group">
+                    <label class="labelForm" for="nVuelo">Número de vuelo</label>
+                    <input class="form-control" id="nVuelo" type="text" />
+                  </div>
+                  <div class="col-sm-3 form-group">
+                    <label class="labelForm" for="nSilla">No. silla</label>
+                    <input class="form-control" id="nSilla" type="text" />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-toggle="modal" v-on:click="guardarViaje()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ¡Cuida tu salud! - AMARILLO -->
+      <div class="modal fade" v-bind:id="itemDiagAmarillo.id" tabindex="-1" aria-hidden="true"
+        v-for="itemDiagAmarillo in diagnosticos" v-if="itemDiagAmarillo.valor == 'ADVERTENCIA'" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+          <div class="modal-content shadow-sm">
+            <div class="modal-header">
+              <h3 class="modal-title textYellow">{{ itemDiagAmarillo.texto }}</h3>
+            </div>
+            <div class="modal-body">
+              <p class="subtitle">{{ itemDiagAmarillo.descripcion }}</p>
+              <div class="accordionYellow row" v-bind:id="'accordion-' + itemDiagAmarillo.id">
+                <div class="card col-12" v-for="itemCategoriasAmarillo in itemDiagAmarillo.categorias"
+                  v-bind:class="'order-' + itemCategoriasAmarillo.orden">
+                  <button class="card-header" id="cardModalYellow" data-toggle="collapse"
+                    v-bind:data-target="'#' + itemCategoriasAmarillo.slug" aria-expanded="true"
+                    v-bind:aria-controls="itemCategoriasAmarillo.slug">
+                    <i v-bind:class="'iconm-' + itemCategoriasAmarillo.slug"></i>
+                    <p class="smallText p-Weight">
+                      {{ itemCategoriasAmarillo.texto }}
+                    </p>
+                    <i class="iconm-arrow-bottom"></i>
+                  </button>
+
+                  <div v-bind:id="itemCategoriasAmarillo.slug" class="collapse listCollapse"
+                    aria-labelledby="cardModalYellow" v-bind:data-parent="'#accordion-' + itemDiagAmarillo.id">
+                    <ul class="card-body">
+                      <li class="smallText"
+                        v-for="itemRecomendacionesAmarillo in itemCategoriasAmarillo.recomendaciones">
+                        {{ itemRecomendacionesAmarillo.texto }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" data-toggle="modal" v-on:click="valorViaje()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ¡Cuida tu salud! - ROJO -->
+      <div class="modal fade" v-bind:id="itemDiagRojo.id" tabindex="-1" aria-hidden="true"
+        v-for="itemDiagRojo in diagnosticos" v-if="itemDiagRojo.valor == 'ALERTA'" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+          <div class="modal-content shadow-sm">
+            <div class="modal-header">
+              <h3 class="modal-title textRed">{{ itemDiagRojo.texto }}</h3>
+            </div>
+            <div class="modal-body">
+              <p class="subtitle">{{ itemDiagRojo.descripcion }}</p>
+              <div class="accordionRed row" v-bind:id="'accordion-' + itemDiagRojo.id">
+                <div class="card col-12" v-for="itemCategoriasRojo in itemDiagRojo.categorias"
+                  v-bind:class="'order-' + itemCategoriasRojo.orden">
+                  <button class="card-header" id="cardModalRed" data-toggle="collapse"
+                    v-bind:data-target="'#' + itemCategoriasRojo.slug" aria-expanded="true"
+                    v-bind:aria-controls="itemCategoriasRojo.slug">
+                    <i v-bind:class="'iconm-' + itemCategoriasRojo.slug"></i>
+                    <p class="smallText p-Weight">
+                      {{ itemCategoriasRojo.texto }}
+                    </p>
+                    <i class="iconm-arrow-bottom"></i>
+                  </button>
+
+                  <div v-bind:id="itemCategoriasRojo.slug" class="collapse listCollapse" aria-labelledby="cardModalRed"
+                    v-bind:data-parent="'#accordion-' + itemDiagRojo.id">
+                    <ul class="card-body">
+                      <li class="smallText" v-for="itemRecomendacionesRojo in itemCategoriasRojo.recomendaciones">
+                        {{ itemRecomendacionesRojo.texto }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" data-toggle="modal" v-on:click="valorViaje()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <!-- FOOTER-->
+  <footer>
+    <p>© Copyright 2020 – Todos los derechos reservados Gobierno de Colombia.</p>
+  </footer>
+
+
+  <!-- SCRIPT-->
+  <script src="../js/js-coronApp/vendor/jquery-3.5.1.min.js"></script>
+  <script src="../js/js-coronApp/vendor/bootstrap.min.js"></script>
+  <script src="../js/js-coronApp/vendor/vue.min.js"></script>
+  <script src="../js/js-coronApp/mainCoronApp.js"></script>
+  <script src="../js/js-coronApp/featuresCoronApp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <!-- FAVICON-->
+    <link rel="apple-touch-icon" href="images/favicon.ico"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <!-- SEO TAGS -->
+    <title>¡Di no, a las noticias falsas acerca del COVID-19!</title>
+    <meta name="description" content="No te dejes asustar, mensajes falsos que solo buscan crear confusión."/>
+    <!-- Open Graph data-->
+    <meta property="og:title" content="¡Di no, a las noticias falsas acerca del COVID-19!"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://coronaviruscolombia.gov.co/Covid19/"/>
+    <meta property="og:description" content="No te dejes asustar, mensajes falsos que solo buscan crear confusión."/>
+    <meta property="og:image" content="https://coronaviruscolombia.gov.co/Covid19/images/share-covid-19-2.jpg"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@infopresidencia"/>
+    <meta name="twitter:creator" content="@infopresidencia"/>
+    <meta name="twitter:title" content="¡Di no, a las noticias falsas acerca del COVID-19!"/>
+    <meta name="twitter:description" content="No te dejes asustar, mensajes falsos que solo buscan crear confusión."/>
+    <meta name="twitter:image" content="https://coronaviruscolombia.gov.co/Covid19/images/share-covid-19-2.jpg"/>
+    <!-- STYLES-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,800,900&amp;amp;display=swap"/>
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/mainCovid.css"/>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-16660818-39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-16660818-39');
+      
+      
+    </script>
+  </head>
+  <body>
+    <!-- BLACK-->
+    <div class="blackbox blackboxLoader"><i class="iconm-loader"></i></div>
+    <div class="blackbox blackboxBrowser fullBlack" style="display: none;">
+      <div class="popupModal col-12 col-sm-11 col-lg-7 col-xl-6">
+        <div class="innerPopupModal">
+          <h2>
+             Su Navegador no es compatible</h2>
+          <p class="browserExperience">
+            Para una mejor experiencia use una de estas otras opciones
+            
+          </p>
+          <ul class="browserList">
+            <li>
+              <!--RUTA --><img src="images/icon-safari.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="images/icon-chrome.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="images/icon-firefox.jpg"/>
+            </li>
+            <li>
+              <!--RUTA --><img src="images/icon-ie-edge.jpg"/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- HEADER-->
+    <header class="col-12 col-sm-12">
+      <ul class="topHeader">
+        <li class="col-12 col-sm-9 col-lg-8">
+          <p><b tabindex="0"><i class="iconm-telefono"></i> Linea de Atención para celular 192 </b><span> | </span><a href="lineas-de-atencion.html">Ver todas las lineas de atención</a></p>
+        </li>
+        <li class="contentTopRedes col-sm-3 col-lg-4">
+          <ul class="redes">
+            <li class="botWhatsApp"><a href="https://api.whatsapp.com/send?phone=573153330000&amp;text=Datos%20adicionales%20del%20Covid-19%20en%20Colombia,%20dando%20clic%20en%20enviar%20&amp;source=&amp;data=&amp;autoload=false" target="_blank" title="Chat de asistencia COVID-19"><i class="iconm-whatsapp"></i></a></li>
+            <li><a href="https://www.facebook.com/MinSaludCol" target="_blank" title="Facebook Ministerio de Salud"><i class="iconm-facebook"></i></a></li>
+            <li><a href="https://twitter.com/MinSaludCol" target="_blank" title="Twitter Ministerio de Salud"><i class="iconm-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/user/MinSaludColPrensa" target="_blank" title="Youtube Ministerio de Salud"><i class="iconm-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/minsaludcol/" target="_blank" title="Instagram Ministerio de Salud"><i class="iconm-instagram"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="headerContent">
+        <div id="contentMobile">
+          <figure class="logo"><a href="index.html" tabindex="0"><img src="images/govco-bn.png" alt="Gov.co"/></a></figure>
+          <div class="mainContBtns">
+            <div id="btnMenuMobile" style="display: none;" title="Botón Menú" tabindex="0">
+              <ul>
+                <li class="top"></li>
+                <li class="middle"></li>
+                <li class="bottom"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <nav id="contentMenu">
+          <ul class="menu">
+            <li class="firstLvl" databodyclass="home"><a href="index.html">
+                <p>Inicio</p></a></li>
+            <li class="firstLvl highLightMenu" databodyclass="auto-diagnostico"><a href="auto-diagnostico.html">
+                <p>Autodiagnóstico</p></a></li>
+            <li class="firstLvl dropdownMenu"><a class="btnSubMenu">
+                <p>Acciones del Gobierno</p></a>
+              <ul class="subMenu">
+                <li databodyclass="acciones" databodyclassparent="subMenu"><a href="acciones-del-gobierno.html">
+                    <p>Acciones tomadas</p></a></li>
+                <li databodyclass="colombia-sigue-adelante" databodyclassparent="subMenu"><a href="http://colombiasigueadelante.mincit.gov.co/" target="_blank">
+                    <p>Colombia sigue adelante</p></a></li>
+                <li databodyclass="alocuciones" databodyclassparent="subMenu"><a href="alocuciones-declaraciones.html">
+                    <p>Alocuciones y Declaraciones</p></a></li>
+                <li databodyclass="decretos" databodyclassparent="subMenu"><a href="decretos.html">
+                    <p>Decretos</p></a></li>
+                <li databodyclass="protocolo" databodyclassparent="subMenu"><a href="protocolos.html">
+                    <p>Protocolos</p></a></li>
+              </ul>
+            </li>
+            <li class="firstLvl dropdownMenu"><a class="btnSubMenu">
+                <p>Mitos y Preguntas</p></a>
+              <ul class="subMenu">
+                <li databodyclass="preguntas" databodyclassparent="subMenu"><a href="preguntas-frecuentes.html">
+                    <p>Preguntas frecuentes</p></a></li>
+                <li databodyclass="mitos-realidades" databodyclassparent="subMenu"><a href="mitos-realidades.html">
+                    <p>Mitos y Realidades</p></a></li>
+              </ul>
+            </li>
+            <li class="firstLvl dropdownMenu"><a class="btnSubMenu">
+                <p>Enlaces de Interés</p></a>
+              <ul class="subMenu">
+                <li databodyclass="ayudar-nos-hace-bien" databodyclassparent="subMenu"><a href="ayudar-nos-hace-bien.html">
+                    <p>Ayudar nos hace bien</p></a></li>
+                <li databodyclass="ayuda-discapacitados" databodyclassparent="subMenu"><a href="tic-personas-con-discapacidad.html">
+                    <p>TIC y discapacidad</p></a></li>
+                <li databodyclass="aislamiento" databodyclassparent="subMenu"><a href="aislamiento-saludable.html">
+                    <p>Aislamiento Saludable</p></a></li>
+                <li databodyclass="cadena-de-abastecimiento" databodyclassparent="subMenu"><a href="http://ayudarnoshacebien.org/" target="_blank">
+                    <p>Cadena de abastecimiento</p></a></li>
+                <li databodyclass="enlaces-interes" databodyclassparent="subMenu"><a href="enlaces-interes.html">
+                    <p>Información de interés - COVID-19</p></a></li>
+                <li databodyclass="comportamiento-covid-19" databodyclassparent="subMenu"><a href="estadisticas-covid-19/comportamiento-covid-19.html">
+                    <p>Estadisticas COVID-19</p></a></li>
+                <li databodyclass="centro-documental" databodyclassparent="subMenu"><a href="centro-documental.html">
+                    <p>Centro Documental</p></a></li>
+                <li databodyclass="noticias-falsas" databodyclassparent="subMenu"><a href="noticias-falsas.html">
+                    <p>Noticias Falsas</p></a></li>
+                <li databodyclass="boletin-diario" databodyclassparent="subMenu"><a href="boletin-diario.html">
+                    <p>Boletín diario - Noticias Falsas</p></a></li>
+                <li databodyclass="datos-cuarentena" databodyclassparent="subMenu"><a href="datos-cuarentena.html">
+                    <p>Aislamiento Preventivo</p></a></li>
+              </ul>
+            </li>
+            <li class="firstLvl dropdownMenu"><a class="btnSubMenu">
+                <p>Lineas de Atención</p></a>
+              <ul class="subMenu">
+                <li databodyclass="telefonos-covid" databodyclassparent="subMenu"><a href="lineas-de-atencion.html">
+                    <p>COVID-19</p></a></li>
+                <li databodyclass="telefonos-eps" databodyclassparent="subMenu"><a href="lineas-de-atencion-eps.html">
+                    <p>EPS</p></a></li>
+              </ul>
+            </li>
+            <li class="firstLvl highLightMenu" databodyclass="denuncia-virtual"><a href="https://adenunciar.policia.gov.co/Adenunciar/Login.aspx?ReturnUrl=%2fadenunciar%2fdefault.aspx" target="_blank">
+                <p>Denuncia Virtual</p></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="row" id="mainContent">
+      <div class="col-12 col-sm-12" id="mainContainer" dataClass="noticias-falsas">
+        <section class="bannerTitle banner-ayudar col-12 col-sm-12">
+          <figure><img class="imageDesk" src="images/noticiasFalsas/bannerNoticiasFalsasDesk.jpg" alt="" title=""/><img class="imageTablet" src="images/noticiasFalsas/bannerNoticiasFalsasTablet.jpg" alt="" title=""/><img class="imageMobile" src="images/noticiasFalsas/bannerNoticiasFalsasMobile.jpg" alt="" title=""/></figure>
+        </section>
+        <section class="containerVideos col-12 col-sm-12">
+          <div class="innerContainerVideos innerWrapper">
+            <div class="titleCont">
+              <h1>No te dejes asustar, mensajes falsos que solo buscan crear confusión.</h1>
+              <p> Para mayor información comunicarse con los siguientes correos: <a href="mailto:contacto@colcert.gov.co">contacto@colcert.gov.co</a>, <a href="mailto:csirtgob@mintic.gov.co">csirtgob@mintic.gov.co</a> y <a href="mailto:caivirtual@policia.gov.co">caivirtual@policia.gov.co</a>. Así mismo pueden comunicarse a través de la página del Centro Cibernético Policia</p>
+            </div>
+            <div class="content-buttons"><a class="btnBox btnItem" href="https://caivirtual.policia.gov.co/" target="_blank">
+                <p>Centro Cibernético</p></a></div>
+            <ul class="listVideos">
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! están enviando a través de cadenas de whatsapp una información falsa sobre un supuesto derecho a retirar una cantidad de dinero a través del Fondo de riesgos laborales, “recomendamos eliminar esta información y no compartirla” <a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/MintrabajoCol?ref_src=twsrc%5Etfw">@MintrabajoCol</a><a href="https://t.co/Jz43neXC69">pic.twitter.com/Jz43neXC69</a></p>— colCERT (@colCERT) <a href="https://twitter.com/colCERT/status/1241465684653195268?ref_src=twsrc%5Etfw">March 21, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Está llegando, a través de mensajería instantánea, un enlace en el que prometen regalar Gigas de Internet durante la contingencia del <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a>. Este enlace es potencialmente malicioso y NO debe ser abierto. Ver detalles aquí <a href="https://t.co/GY1uptkIPp">https://t.co/GY1uptkIPp</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://t.co/W76mwRbdO5">pic.twitter.com/W76mwRbdO5</a></p>— Ministerio TIC (@Ministerio_TIC) <a href="https://twitter.com/Ministerio_TIC/status/1241370028861280256?ref_src=twsrc%5Etfw">March 21, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Está llegando a las cuentas de correo un mail suplantado a <a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a> referenciando el COVID-19. Trae un archivo potencialmente malicioso y NO debe ser abierto. Conozca más información <a href="https://t.co/i5i0WospZY">https://t.co/i5i0WospZY</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/colCERT?ref_src=twsrc%5Etfw">@colCERT</a><a href="https://t.co/AlCBxIIrVg">pic.twitter.com/AlCBxIIrVg</a></p>— Ministerio TIC (@Ministerio_TIC) <a href="https://twitter.com/Ministerio_TIC/status/1237845639079137282?ref_src=twsrc%5Etfw">March 11, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falsa oferta "BONOS NUEVA TARJETA ALIMENTARIA..." está siendo enviada a través de mensajes de texto y whatsapp, con el fin de solicitar datos personales. "Se recomienda hacer caso omiso y eliminar de inmediato" <a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/fraude?src=hash&amp;ref_src=twsrc%5Etfw">#fraude</a><a href="https://t.co/Kzqr2Zj4UV">pic.twitter.com/Kzqr2Zj4UV</a></p>— colCERT (@colCERT) <a href="https://twitter.com/colCERT/status/1241057214917414918?ref_src=twsrc%5Etfw">March 20, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Ten en cuenta estas recomendaciones del <a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a>, para no caer en <a href="https://twitter.com/hashtag/NoticiasFalsas?src=hash&amp;ref_src=twsrc%5Etfw">#NoticiasFalsas</a> o correos maliciosos acerca del CoronaVirus. Protégete también en el entorno digital 👉👉 <a href="https://t.co/EXMM0zqWvm">https://t.co/EXMM0zqWvm</a><a href="https://t.co/PLC15oDreu">pic.twitter.com/PLC15oDreu</a></p>— Ministerio TIC (@Ministerio_TIC) <a href="https://twitter.com/Ministerio_TIC/status/1238614441421348864?ref_src=twsrc%5Etfw">March 13, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr"><a href="https://twitter.com/hashtag/NuevoChequeo?src=hash&amp;ref_src=twsrc%5Etfw">#NuevoChequeo</a> | Nos comunicamos con las autoridades de Magdalena e indicaron que el paciente se encuentra con signos vitales estables, pero continúa en la UCI<br/><br/>Este y más chequeos sobre el coronavirus en nuestra web ⬇️<a href="https://t.co/REJWE6zpn8">https://t.co/REJWE6zpn8</a></p>— Colombiacheck (@Colcheck) <a href="https://twitter.com/Colcheck/status/1241488005090758656?ref_src=twsrc%5Etfw">March 21, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr"><a href="https://twitter.com/hashtag/ATENCI%C3%93N?src=hash&amp;ref_src=twsrc%5Etfw">#ATENCIÓN</a> | Este mensaje que circula por WhatsApp es FALSO. <br/><br/>No se deje sorprender por información anónima que circula por medios digitales y que ha sido divulgada en varios países de Latinoamérica.<br/><br/>¡Acuda siempre a fuentes oficiales!<a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://t.co/GJGhat4lZi">pic.twitter.com/GJGhat4lZi</a></p>— Fuerza Aérea Colombiana (@FuerzaAereaCol) <a href="https://twitter.com/FuerzaAereaCol/status/1240276339590082560?ref_src=twsrc%5Etfw">March 18, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">⚠️CUIDADO⚠️ Por correo electrónico circula información FALSA, a nombre del <a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a>, que pide descargar un archivo con recomendaciones para evitar el COVID-19, y en realidad roba información personal. ¡No caigas en la trampa! Infórmate solo en canales oficiales del MinSalud <a href="https://t.co/5GuTL4iTLd">pic.twitter.com/5GuTL4iTLd</a></p>— MinSaludCol (@MinSaludCol) <a href="https://twitter.com/MinSaludCol/status/1242515062641831936?ref_src=twsrc%5Etfw">March 24, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">La ONU alerta de informaciones falsas que circulan por redes sociales y WhatsApp usando su nombre y logo de manera fraudulenta para ofrecer ayuda alimentaria. <br/><br/>📢 Verifica siempre las informaciones sobre el <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;ref_src=twsrc%5Etfw">#COVID19</a> y recurre a fuentes confiables como <a href="https://twitter.com/OPSOMS_Col?ref_src=twsrc%5Etfw">@OPSOMS_Col</a> y <a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a><a href="https://t.co/bvozjaa2OD">pic.twitter.com/bvozjaa2OD</a></p>— ONU Colombia (@onucolombia) <a href="https://twitter.com/onucolombia/status/1241776439164370945?ref_src=twsrc%5Etfw">March 22, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr"><a href="https://twitter.com/hashtag/NuevoChequeo?src=hash&amp;ref_src=twsrc%5Etfw">#NuevoChequeo</a> | Nos comunicamos con las autoridades de Magdalena e indicaron que el paciente se encuentra con signos vitales estables, pero continúa en la UCI<br/><br/>Este y más chequeos sobre el coronavirus en nuestra web ⬇️<a href="https://t.co/REJWE6zpn8">https://t.co/REJWE6zpn8</a></p>— Colombiacheck (@Colcheck) <a href="https://twitter.com/Colcheck/status/1241488005090758656?ref_src=twsrc%5Etfw">March 21, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Aclaramos que la información que circula en redes sociales que a partir de las 11:00 p.m. helicópteros de la Fuerza Aérea rociarán desinfectante como medida preventiva del <a href="https://twitter.com/hashtag/Coronavirus?src=hash&amp;ref_src=twsrc%5Etfw">#Coronavirus</a> ES FALSO. <a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://t.co/6cwg8EVrHk">pic.twitter.com/6cwg8EVrHk</a></p>— TCS Noticias (@tcsnoticias) <a href="https://twitter.com/tcsnoticias/status/1239977659268059137?ref_src=twsrc%5Etfw">March 17, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Mensaje "FALSO" se está enviando a través de SMS y whatsapp con supuesto "Bono de alimentos y medicinas", "se recomienda eliminar de inmediato y no compartirlo" <a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/infopresidencia?ref_src=twsrc%5Etfw">@infopresidencia</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a><a href="https://twitter.com/hashtag/FakeNew?src=hash&amp;ref_src=twsrc%5Etfw">#FakeNew</a><a href="https://t.co/sZhtHbf6US">pic.twitter.com/sZhtHbf6US</a></p>— colCERT (@colCERT) <a href="https://twitter.com/colCERT/status/1242490752669802496?ref_src=twsrc%5Etfw">March 24, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4"> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Recuerden que tenemos un especial con todas las desinformaciones sobre el coronavirus y un <a href="https://twitter.com/hashtag/EXPLICADOR?src=hash&amp;ref_src=twsrc%5Etfw">#EXPLICADOR</a> para identificar los falsos audios de cadenas en WhatsApp<br/>Este por ejemplo, menciona la llegada de un caso <a href="https://twitter.com/hashtag/Covid_19?src=hash&amp;ref_src=twsrc%5Etfw">#Covid_19</a> al Hospital de Suba en Bogotá <a href="https://twitter.com/hashtag/FALSO?src=hash&amp;ref_src=twsrc%5Etfw">#FALSO</a><a href="https://t.co/eUZqmCfib0">https://t.co/eUZqmCfib0</a></p>— Colombiacheck (@Colcheck) <a href="https://twitter.com/Colcheck/status/1243627349586767872?ref_src=twsrc%5Etfw">March 27, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">En redes sociales y cadenas de WhatsApp, circula información FALSA como esta que solo busca generar miedo y desconfianza entre los ciudadanos ¡No caigas en mentiras! Verifica toda la información en fuentes oficiales. <a href="https://t.co/WvX6FWQ4NY">pic.twitter.com/WvX6FWQ4NY</a></p>— MinSaludCol (@MinSaludCol) <a href="https://twitter.com/MinSaludCol/status/1244088935485235206?ref_src=twsrc%5Etfw">March 29, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Queremos informarles a los colombianos que es falsa la información que circula en redes sociales sobre un supuesto cambio en las fechas para el regreso de los estudiantes a las aulas. No compartamos<a href="https://twitter.com/hashtag/NoticiasFalsas?src=hash&amp;amp;ref_src=twsrc%5Etfw">#NoticiasFalsas</a><a href="https://t.co/1sT8CnbOzx">pic.twitter.com/1sT8CnbOzx</a></p>MinEducación (@Mineducacion)<a href="https://twitter.com/Mineducacion/status/1244447912148504577?ref_src=twsrc%5Etfw"></a>March 30, 2020
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falso "SUBSIDIO DE DESEMPLEO DE $1.755.606 POR TRES MESES.." está siendo enviado a través de mensajes de Facebook, "Recomendamos hacer caso omiso a esta información y ¡no reenviarla!".<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://t.co/7RMdlPZGjV">pic.twitter.com/7RMdlPZGjV</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1244484311719514112?ref_src=twsrc%5Etfw">March 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falsa página "BONO POR $160.000 Ayuda Humanitaria por la Crisis del Coronavirus" está siendo enviada a través de redes sociales y sistemas de mensajería, ¡Recomendamos Hacer caso omiso a esta información y No reenviarla!<a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/1ssyEQL4MW">pic.twitter.com/1ssyEQL4MW</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1244659185687683074?ref_src=twsrc%5Etfw">March 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falsa Tabla "Beneficios para empresas"se está enviando a través de Whatsapp y otras redes sociales, "¡Recomendamos no reenviar esta información..!"<a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/Ypg3Lb1Qmb">pic.twitter.com/Ypg3Lb1Qmb</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1244666735703273472?ref_src=twsrc%5Etfw">March 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">⚠️ Alerta⚠️ Está llegando por medio de aplicaciones de mensajería un link suplantando al Sisbén, en el que reparten bonos de ayuda humanitaria por<a href="https://twitter.com/hashtag/COVID19?src=hash&amp;amp;ref_src=twsrc%5Etfw">#COVID19. Esto es FALSO y el enlace NO debe ser abierto. Detalles en 👉</a><a href="https://t.co/jsHv3XP0x6">https://t.co/jsHv3XP0x6</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/colCERT?ref_src=twsrc%5Etfw">@colCERT</a><a href="https://t.co/zFE6XSe6yU">pic.twitter.com/zFE6XSe6yU</a></p>Ministerio TIC (@Ministerio_TIC)<a href="https://twitter.com/Ministerio_TIC/status/1245049843116097542?ref_src=twsrc%5Etfw">March 31, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Link Falso formulario "Gestión de ayudas de Soacha" está siendo enviado a través redes sociales y cadenas de whatsapp, recomendamos no compartir esta información "eliminarla". El sitio oficial ➡️ <a href="https://t.co/uamR3QxRxz">https://t.co/uamR3QxRxz</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://t.co/qpshqwAhKQ">pic.twitter.com/qpshqwAhKQ</a></p>— colCERT (@colCERT) <a href="https://twitter.com/colCERT/status/1245462498746269696?ref_src=twsrc%5Etfw">April 1, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">El fin es el mismo (robar sus datos personales), la técnica es diferente, haga caso omiso a esas falsas tarjetas de "plan social"<a href="https://twitter.com/hashtag/CaiVirtualAlerta?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CaiVirtualAlerta</a><a href="https://twitter.com/hashtag/Ciberseguridad?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Ciberseguridad</a><a href="https://twitter.com/DIJINPolicia?ref_src=twsrc%5Etfw">@DIJINPolicia</a><a href="https://twitter.com/TwitterLatAm?ref_src=twsrc%5Etfw">@TwitterLatam</a><a href="https://t.co/M0geebEyg7">pic.twitter.com/M0geebEyg7</a></p>Centro Cibernético (@CaiVirtual)<a href="https://twitter.com/CaiVirtual/status/1247907070784888833?ref_src=twsrc%5Etfw">April 8, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Mensaje fraudulento con supuesto BONO está siendo enviado a través de mensajes de texto, recomendamos no compartirlo ¡cuide sus datos personales y evite ser estafado!<a href="https://twitter.com/hashtag/smishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#smishing</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/estafa?src=hash&amp;amp;ref_src=twsrc%5Etfw">#estafa</a><a href="https://t.co/UmOji8bCrH">pic.twitter.com/UmOji8bCrH</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1248253187179425797?ref_src=twsrc%5Etfw">April 9, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falso mensaje con asunto “...ACABAS DE GANAR UN MAZDA...” está siendo enviado a través de mensajes de texto, evite ser víctima de un Fraude, proteja sus datos personales”<a href="https://twitter.com/hashtag/smishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#smishing</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/KRjeCptsh4">pic.twitter.com/KRjeCptsh4</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1248303628584181761?ref_src=twsrc%5Etfw">April 9, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Se están enviando mensajes falsos con supuestos regalos de alimentos a nombre de<a href="https://twitter.com/almacenesexito?ref_src=twsrc%5Etfw">@almacenesexito</a>“recomendamos hacer caso omiso, eliminarlo y no compartirlo”<a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/cAHcMUv9D1">pic.twitter.com/cAHcMUv9D1</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1250441165012226049?ref_src=twsrc%5Etfw">April 15, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! están enviando correo electrónico malicioso con asunto "Minsalud - Circular No.297 de 2020 Covid-19" contiene un adjunto PDF con una URL que descarga<a href="https://twitter.com/hashtag/malware?src=hash&amp;amp;ref_src=twsrc%5Etfw">#malware</a>"¡Recomendamos que no abran el correo y lo eliminen de inmediato!"<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/kJqHfYLLDB">pic.twitter.com/kJqHfYLLDB</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1250577278687424514?ref_src=twsrc%5Etfw">April 16, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Consultemos siempre las fuentes oficiales ante las noticias que nos lleguen por correo electrónico o WhatsApp.<a href="https://t.co/CyT3ly2euI">https://t.co/CyT3ly2euI</a><a href="https://twitter.com/hashtag/Apropiaci%C3%B3nTIC?src=hash&amp;amp;ref_src=twsrc%5Etfw">#ApropiaciónTIC</a><a href="https://twitter.com/hashtag/M%C3%A1sTICMejorPrevenci%C3%B3n?src=hash&amp;amp;ref_src=twsrc%5Etfw">#MásTICMejorPrevención</a><a href="https://t.co/wiuqaoJQfD">pic.twitter.com/wiuqaoJQfD</a></p>Germán Rueda Jiménez (@GermanRueda)<a href="https://twitter.com/GermanRueda/status/1251306953067937793?ref_src=twsrc%5Etfw">April 18, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falsa oferta de trabajo se está ofreciendo a nombre de<a href="https://twitter.com/AlmacenesJumbo?ref_src=twsrc%5Etfw">@AlmacenesJumbo</a>y se está enviando a través de SMS y whatsapp “Recomendamos hacer casi omiso a estos tipos de mensajes”<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://t.co/Oy7LthFk06">pic.twitter.com/Oy7LthFk06</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1251618068851298314?ref_src=twsrc%5Etfw">April 18, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡ATENCIÓN! Están suplantando al Espacio Virtual de Asesoría,<a href="https://twitter.com/hashtag/EVA?src=hash&amp;amp;ref_src=twsrc%5Etfw">#EVA</a>con un correo falso. Si recibes un correo de eva_sena@funcionpublica.gov.co NO lo abras, es un software malicioso.<a href="https://t.co/O83ChNlnzK">pic.twitter.com/O83ChNlnzK</a></p>Función Pública (@DAFP_COLOMBIA) <a href="https://twitter.com/DAFP_COLOMBIA/status/1253429265640509441?ref_src=twsrc%5Etfw">April 23, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falso dominio pide registro con supuesto bonus por motivo de cuarentena<a href="https://twitter.com/hashtag/Covid_19?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Covid_19</a><a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a>“recomendamos no diligenciar el formulario, cuide sus datos personales, consulte sitios oficiales de Gobierno -<a href="https://t.co/hIKv9vWGJ2">https://t.co/hIKv9vWGJ2</a>”<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/s8mmxEIvfp">pic.twitter.com/s8mmxEIvfp</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1254415965288312832?ref_src=twsrc%5Etfw">April 26, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">No creas noticias falsas como esta, que circula por correo electrónico, ni descargues archivos adjuntos, pues podrías ser víctima de delincuentes que buscan robar tus datos personales. Verifica toda la información que recibas a nombre de<a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a>en nuestros canales oficiales<a href="https://t.co/NJHpNJ7tac">pic.twitter.com/NJHpNJ7tac</a>MinSaludCol (@MinSaludCol)<a href="https://twitter.com/MinSaludCol/status/1254235493635678208?ref_src=twsrc%5Etfw">April 26, 2020</a></p>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Nuevo dominio fraudulento sobre “ingreso solidario” está siendo utilizado para capturar datos personales a nombre del<a href="https://twitter.com/DNP_Colombia?ref_src=twsrc%5Etfw">@DNP_Colombia</a>¡Recuerden! que el sitio oficial de gobierno es<a href="https://t.co/EW5p3Il0JW">https://t.co/EW5p3Il0JW</a>“<a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/XS8GeCqKSb">pic.twitter.com/XS8GeCqKSb</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1255248299130576900?ref_src=twsrc%5Etfw">April 28, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falso mensaje está siendo enviado a través de whatsapp con asunto “A PARTIR DEL 11 DE MAYO...”<a href="https://twitter.com/hashtag/RompaLaCadena?src=hash&amp;amp;ref_src=twsrc%5Etfw">#RompaLaCadena</a><a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a>“recomendamos eliminarlo y no reenviarlo, consulte siempre los canales oficiales de Gobierno”<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/W2HVFSCT7f">pic.twitter.com/W2HVFSCT7f</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1255837757479452673?ref_src=twsrc%5Etfw">April 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Esta circulando información mediante aplicaciones de mensajería indicando que el visor de<a href="https://twitter.com/DANE_Colombia?ref_src=twsrc%5Etfw">@DANE_Colombia</a>muestra en rojo personas contagiadas con COVID19. ¡Esto es FALSO! El visor determina el grado de vulnerabilidad de la población<a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://t.co/lJJ9TniRXd">https://t.co/lJJ9TniRXd</a><a href="https://t.co/Cne51NZgNB">pic.twitter.com/Cne51NZgNB</a>Ministerio TIC (@Ministerio_TIC)<a href="https://twitter.com/Ministerio_TIC/status/1255686098027765760?ref_src=twsrc%5Etfw">April 30, 2020</a></p>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Está circulando información por Whatsapp y mensajes de texto promoviendo ayudas en dinero y tarjetas de mercado por parte del Gobierno Nacional. ¡Esto es FALSO! <a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/colCERT?ref_src=twsrc%5Etfw">@colCERT</a><a href="https://twitter.com/hashtag/Phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Phishing</a>Detalles en 👉 <a href="https://t.co/oKgJRT39eN">https://t.co/oKgJRT39eN</a><a href="https://t.co/rQiqog9dqa">pic.twitter.com/rQiqog9dqa</a>Ministerio TIC (@Ministerio_TIC)<a href="https://twitter.com/Ministerio_TIC/status/1263625058481774593?ref_src=twsrc%5Etfw">May 22, 2020</a></p>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Falso formulario “REGRESO A CLASES PRESENCIALES...” se está difundiendo a través de whatsapp a nombre de <a href="https://twitter.com/Mineducacion?ref_src=twsrc%5Etfw">@Mineducacion ➡️</a><a href="https://t.co/XC7CzCPehb">https://t.co/XC7CzCPehb</a>“recomendamos no difundirlo” <a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/hashtag/FakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#FakeNews</a><a href="https://t.co/v6h6OZJXOg">pic.twitter.com/v6h6OZJXOg</a>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1264378002147868673?ref_src=twsrc%5Etfw">May 24, 2020</a></p>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Sigue la campaña fraudulenta a través de correo electrónico "Usted ha sido citado para una prueba obligatoria de (COVID-19)" contiene<a href="https://twitter.com/hashtag/malware?src=hash&amp;amp;ref_src=twsrc%5Etfw">#malware</a>"recomendamos eliminarlo de manera inmediata y siempre consultar los canales oficiales de<a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://t.co/PlT3bRYLWe">pic.twitter.com/PlT3bRYLWe</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1271127740805189636?ref_src=twsrc%5Etfw">June 11, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr"><a href="https://twitter.com/INSColombia?ref_src=twsrc%5Etfw">@INSColombia</a>informa que los mensajes oficiales de<a href="https://twitter.com/hashtag/Coronapp?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Coronapp</a>llegan por los siguientes códigos. Recurra a fuentes confiables y evite cadenas o noticias falsas como éstas.<a href="https://twitter.com/hashtag/NoALasFakeNews?src=hash&amp;amp;ref_src=twsrc%5Etfw">#NoALasFakeNews</a><a href="https://t.co/7Tes0RWsGg">pic.twitter.com/7Tes0RWsGg</a></p>Instituto Nacional de Salud (@INSColombia)<a href="https://twitter.com/INSColombia/status/1271251383447097345?ref_src=twsrc%5Etfw">June 12, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Mensaje FALSO está siendo enviado a través de SMS y whatsapp ofreciendo combustible gratuito a nombre de<a href="https://twitter.com/TerpelCol?ref_src=twsrc%5Etfw">@TerpelCol</a>“recomendamos eliminarlo de forma inmediata y no compartirlo” <a href="https://twitter.com/hashtag/smishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#smishing</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/UAaj0qGuBw">pic.twitter.com/UAaj0qGuBw</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1273294885479763974?ref_src=twsrc%5Etfw">June 17, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Está llegando un correo electrónico suplantando a <a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a>en el que se invita a una cita para la toma de pruebas de <a href="https://twitter.com/hashtag/COVID19?src=hash&amp;amp;ref_src=twsrc%5Etfw">#COVID19</a>. ¡Esto es FALSO! ¡No abras el archivo, ni el enlace! No caigas en el <a href="https://twitter.com/hashtag/Phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Phishing</a>. Conoce más en 👉 <a href="https://t.co/O4r2mVEZoY">https://t.co/O4r2mVEZoY</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://t.co/XLlnUDouk9">pic.twitter.com/XLlnUDouk9</a></p>Ministerio TIC (@Ministerio_TIC)<a href="https://twitter.com/Ministerio_TIC/status/1273769116801937415?ref_src=twsrc%5Etfw">June 19, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li class="col-12 col-md-6 col-lg-4">
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! FALSO mensaje donde otorga “supuesto bonus para toda la familia..” se está enviando a través de mensajes por <a href="https://twitter.com/hashtag/WhatsApp?src=hash&amp;amp;ref_src=twsrc%5Etfw">#WhatsApp</a>o por <a href="https://twitter.com/hashtag/SMS?src=hash&amp;amp;ref_src=twsrc%5Etfw">#SMS</a>a través del cual se solicita datos personales.. ¡eliminar de inmediato! <a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://t.co/8DhKffwDFk">pic.twitter.com/8DhKffwDFk</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1277764794699915264?ref_src=twsrc%5Etfw">June 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! nuevamente publican sitio falso para solicitar datos personales de un supuesto “ingreso solidario” la única página oficial del estado es ➡️<a href="https://t.co/7zM7QGoqXO">https://t.co/7zM7QGoqXO</a><a href="https://twitter.com/DNP_Colombia?ref_src=twsrc%5Etfw">@DNP_Colombia</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/infopresidencia?ref_src=twsrc%5Etfw">@infopresidencia</a><a href="https://twitter.com/hashtag/phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#phishing</a><a href="https://t.co/PaNPYBLZmt">pic.twitter.com/PaNPYBLZmt</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1282811535144955906?ref_src=twsrc%5Etfw">July 13, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Están suplantando a<a href="https://twitter.com/MinSaludCol?ref_src=twsrc%5Etfw">@MinSaludCol</a>con un correo que indica la obligatoriedad de una prueba para COVID-19. ¡Esto es FALSO! No abras el archivo, ni el enlace. ¡No caigas en <a href="https://twitter.com/hashtag/Phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Phishing</a>! Conoce más en 👉 <a href="https://t.co/H0UToJIj8d">https://t.co/H0UToJIj8d</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/colCERT?ref_src=twsrc%5Etfw">@infopresidencia</a><a href="https://twitter.com/CSIRTPONAL?ref_src=twsrc%5Etfw">@CSIRTPONAL</a><a href="https://t.co/yrjAeyOidD">pic.twitter.com/yrjAeyOidD</a></p>Ministerio TIC (@Ministerio_TIC) <a href="https://twitter.com/Ministerio_TIC/status/1283026020078170118?ref_src=twsrc%5Etfw">July 14, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Está circulando un mensaje por Whatsapp y mensaje de texto, suplantando el programa del Gobierno Nacional <a href="https://twitter.com/hashtag/IngresoSolidario?src=hash&amp;amp;ref_src=twsrc%5Etfw">#IngresoSolidario</a>. ¡Esto es FALSO! No caigas en<a href="https://twitter.com/hashtag/Phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Phishing</a>Encuentra más en 👉 <a href="https://t.co/wYWK0SKMoM">https://t.co/wYWK0SKMoM</a><a href="https://twitter.com/hashtag/CSIRTGobierno?src=hash&amp;amp;ref_src=twsrc%5Etfw">#CSIRTGobierno</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/colCERT?ref_src=twsrc%5Etfw">@colCERT</a><a href="https://twitter.com/CSIRTPONAL?ref_src=twsrc%5Etfw">@CSIRTPONAL</a><a href="https://twitter.com/DNP_Colombia?ref_src=twsrc%5Etfw">@DNP_Colombia</a><a href="https://t.co/asL7ChJKwd">pic.twitter.com/asL7ChJKwd</a></p>Ministerio TIC (@Ministerio_TIC) <a href="https://twitter.com/Ministerio_TIC/status/1282842700040089605?ref_src=twsrc%5Etfw">July 14, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Sitio falso donde publican “supuesta solicitud para ayuda a los colombianos” está solicitando información personal “Se recomienda no ingresar datos ni difundir este contenido” <a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/hashtag/phishing?src=hash&amp;amp;ref_src=twsrc%5Etfw">#phishing</a><a href="https://t.co/GwRfJvlyTi">pic.twitter.com/GwRfJvlyTi</a></p>colCERT (@colCERT) <a href="https://twitter.com/colCERT/status/1283446570390884352?ref_src=twsrc%5Etfw">July 15, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li> 
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Página fraudulenta a nombre de la <a href="https://twitter.com/DIANColombia?ref_src=twsrc%5Etfw">@DIANColombia</a>está solicitando datos personales y credenciales que podrían ser utilizados para realizar fraudes, "Recomendamos nunca entregar sus datos y contraseñas en sitios no confiables"<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://t.co/FhR7l817d8">pic.twitter.com/FhR7l817d8</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1283771110455160833?ref_src=twsrc%5Etfw">July 16, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li>
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! Página FALSA con supuesta “Solicitud para ayuda a los colombianos” está siendo utilizada para robar datos personales. “Recomendamos no diligenciar datos personales en portales no oficiales de Gobierno”<a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://twitter.com/DNP_Colombia?ref_src=twsrc%5Etfw">@DNP_Colombia</a><a href="https://t.co/EthzfTl6KQ">pic.twitter.com/EthzfTl6KQ</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1283931120955002880?ref_src=twsrc%5Etfw">July 17, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+              <li>
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">¡Alerta! sitio<a href="https://twitter.com/hashtag/Falso?src=hash&amp;amp;ref_src=twsrc%5Etfw">#Falso</a>con supuesto <a href="https://twitter.com/hashtag/IngresoSolidario?src=hash&amp;amp;ref_src=twsrc%5Etfw">#IngresoSolidario</a>está solicitando información personal &quot;Recomendamos no diligenciar sus datos en sitios que no sean oficiales de Gobierno&quot; Sitio Oficial ➡️ <a href="https://t.co/EW5p3Il0JW">https://t.co/EW5p3Il0JW</a><a href="https://twitter.com/DNP_Colombia?ref_src=twsrc%5Etfw">@DNP_Colombia</a><a href="https://twitter.com/mindefensa?ref_src=twsrc%5Etfw">@mindefensa</a><a href="https://twitter.com/CaiVirtual?ref_src=twsrc%5Etfw">@CaiVirtual</a><a href="https://twitter.com/Ministerio_TIC?ref_src=twsrc%5Etfw">@Ministerio_TIC</a><a href="https://t.co/gXNm3l6ckh">pic.twitter.com/gXNm3l6ckh</a></p>colCERT (@colCERT)<a href="https://twitter.com/colCERT/status/1288925942732197888?ref_src=twsrc%5Etfw">July 30, 2020</a>
+                </blockquote>
+                <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- REDES SOCIALES-->
+    <div class="contentRedes fixedRedes">
+      <ul class="redes">
+        <li class="botWhatsApp"><a href="https://api.whatsapp.com/send?phone=573153330000&amp;text=Datos%20adicionales%20del%20Covid-19%20en%20Colombia,%20dando%20clic%20en%20enviar%20&amp;source=&amp;data=&amp;autoload=false" target="_blank" title="Chat de asistencia COVID-19"><i class="iconm-whatsapp"></i></a></li>
+        <li><a href="https://www.facebook.com/MinSaludCol" target="_blank" title="Facebook Ministerio de Salud"><i class="iconm-facebook"></i></a></li>
+        <li><a href="https://twitter.com/MinSaludCol" target="_blank" title="Twitter Ministerio de Salud"><i class="iconm-twitter"></i></a></li>
+        <li><a href="https://www.youtube.com/user/MinSaludColPrensa" target="_blank" title="Youtube Ministerio de Salud"><i class="iconm-youtube"></i></a></li>
+        <li><a href="https://www.instagram.com/minsaludcol/" target="_blank" title="Instagram Ministerio de Salud"><i class="iconm-instagram"></i></a></li>
+      </ul>
+    </div>
+    <!-- BTN SCROLL-->
+    <div class="btnScrolTop"><a class="ancor" href="#mainContent"><i class="iconm-arrowY"></i></a></div>
+    <!-- FOOTER-->
+    <footer>
+      <div class="contentFooter-renew innerWrapper">
+        <div class="socialMedia col-12 col-sm-12 col-lg-6">
+          <h5>Línea de orientación sobre el nuevo<br/> CORONAVIRUS COVID-19:</h5>
+          <p class="extraInfo"><b>En Bogotá:</b> +57(1) 330 5041 | <b>Celular:</b> 192 | <b>Resto del país:</b> 018000955590</p>
+          <ul class="redes">
+            <li class="botWhatsApp"><a href="https://api.whatsapp.com/send?phone=573153330000&amp;text=Datos%20adicionales%20del%20Covid-19%20en%20Colombia,%20dando%20clic%20en%20enviar%20&amp;source=&amp;data=&amp;autoload=false" target="_blank" title="Chat de asistencia COVID-19"><i class="iconm-whatsapp"></i></a></li>
+            <li><a href="https://www.facebook.com/MinSaludCol" target="_blank" title="Facebook Ministerio de Salud"><i class="iconm-facebook"></i></a></li>
+            <li><a href="https://twitter.com/MinSaludCol" target="_blank" title="Twitter Ministerio de Salud"><i class="iconm-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/user/MinSaludColPrensa" target="_blank" title="Youtube Ministerio de Salud"><i class="iconm-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/minsaludcol/" target="_blank" title="Instagram Ministerio de Salud"><i class="iconm-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="enlacesInteres col-12 col-sm-12 col-lg-6">
+          <h5>Enlace de interés</h5>
+          <ul>
+            <li>
+              <p><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></p>
+            </li>
+            <li>
+              <p><a href="tic-personas-con-discapacidad.html">TIC y discapacidad</a></p>
+            </li>
+            <li>
+              <p><a href="aislamiento-saludable.html">Aislamiento saludable</a></p>
+            </li>
+            <li>
+              <p><a href="enlaces-interes.html">Información de interés - COVID- 19</a></p>
+            </li>
+            <li>
+              <p><a href="noticias-falsas.html">Noticias falsas</a></p>
+            </li>
+            <li>
+              <p><a href="datos-cuarentena.html">Datos sobre la cuarentena</a></p>
+            </li>
+            <li>
+              <p><a href="lineas-de-atencion.html">Lineas de Atención COVID-19</a></p>
+            </li>
+            <li>
+              <p><a href="protocolos.html">Protocolos</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyRight col-12 col-sm-12">
+        <p class="legal">
+          © Copyright 2020 – Todos los derechos reservados Gobierno de Colombia.
+          <br/>
+          <a href="politica-de-privacidad.html">Política de Privacidad</a>
+          
+          
+        </p>
+      </div>
+    </footer>
+    <!-- SCRIPT-->
+    <script src="js/vendor/TweenMax.min.js"></script>
+    <script src="js/vendor/TimelineMax.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/vendor/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/mainCovid.js"></script>
+    <script>
+      FuncionalidadesGenerales.detectBrowser();
+      setTimeout(function () {
+        document.querySelector('.blackboxLoader').style.display = 'none';
+      }, 1000);
+    </script>
+  </body>
+</html>

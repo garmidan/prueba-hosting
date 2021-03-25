@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" href="../images/favicon.ico" />
+  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+  <!-- SEO TAGS -->
+  <title>Diagnostico - CoronApp</title>
+  <meta name="description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <!-- Open Graph data-->
+  <meta property="og:title" content="Diagnostico - CoronApp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" />
+  <meta property="og:description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <meta property="og:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- Twitter Card data-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@infopresidencia" />
+  <meta name="twitter:creator" content="@infopresidencia" />
+  <meta name="twitter:title" content="Diagnostico - CoronApp" />
+  <meta name="twitter:description" content="Evalua tus sintomas y obten tu codigo QR " />
+  <meta name="twitter:image" content="undefinedimages/share-covid-19-2.jpg" />
+  <!-- STYLES-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap">
+  <link rel="stylesheet" href="../css/styles-CoronApp/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/styles-CoronApp/mainCoronApp.css" />
+  <script src="../js/js-coronApp/qrcode.js"></script>
+</head>
+
+<body>
+  <!-- BLACK-->
+  <div class="blackboxLoader">
+    <div class="Logo">
+      <h1 class="logoTitle">CoronApp</h1>
+      <div class="loadCoroApp">
+        <img class="iconoCoronApp" src="../images/coronApp/coronApp.svg" alt="Icono CoronApp" />
+        <img class="loadIconoCoronApp" src="../images/coronApp/loadCoroApp.svg" alt="carga de icono CoronApp" />
+      </div>
+      <p class="logoParagraph"><span>Coronavirus</span> en Colombia</p>
+    </div>
+  </div>
+
+  <!-- HEADER-->
+  <header class="container navCoronapp navLogout">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <img src="../images/logoPresidencia.png" class="headerLogo col-12 col-sm-6 col-lg-3" alt="Logo de presidencia" />
+      <h1 class="col-10 col-sm-4 col-lg-2">CoronApp</h1>
+      <button class="navbar-toggler col-2 col-sm-2" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="diagnostico-coronApp.html">
+              <img src="../images/coronApp/sintomas.svg" alt="Icono de síntomas" />
+              Síntomas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../images/coronApp/cifras.svg" alt="Icono de cifras" />
+              Cifras
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../images/coronApp/cuidados.svg" alt="Icono de cuidados" />
+              Cuidados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="../images/coronApp/informacion.svg" alt="Icono de información" />
+              Información
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" id='cerrarSesion'>
+              <img src="../images/coronApp/logout.svg" alt="Icono de cerrar sesión" />
+              Cerrar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENT-->
+  <main class="container mainContent mainCodigoQR" id="app">
+    <!-- id="app" Indica el contenedor donde se va a realizar el renderizado -->
+
+    <!-- BOTONES POP OVER -->
+    <section class="buttonsPopOvers row">
+      <div class="col-12 col-sm-12 col-md-6 sectionQR">
+        <a class="btnPopOverQR btnPopOver">
+          <i class="iconm-icon-qr"></i>
+          Obtener código QR
+        </a>
+        <div class="popOverQR popOver active" id="codigoqr">
+          <div id='capturaQR'>
+            <div class="codigoQR">
+              <div id="qrcode"></div>
+            </div>
+            <p class="smallText validityQR">Este código será válido hasta el
+              <br>
+              <b id='fechaVencimiento'></b>
+            </p>
+
+            <div id="accordionQR">
+              <div class="card" id='cardInfo'>
+                <button class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="iconm-icon-qr"></i>
+                  <p class="smallText p-Weight">
+                    Tu código
+                  </p>
+                  <i class="iconm-arrow-bottom rotate"></i>
+                </button>
+                <div id="collapseTwo" class="collapse listCollapseQR show" aria-labelledby="headingTwo"
+                  data-parent="#accordionQR">
+                  <ul class="card-body smallText">
+                    <li id='nombre'></li>
+                    <li><a id='tipoDoc'></a> <a id='numDocumento'></a></li>
+                    <li><b>Aerolinea:</b> <a id='aerolinea'></a></li>
+                    <li><b>Nro Vuelo:</b><a id='numVuelo'></a>, silla <a id='silla'></a></li>
+                    <li><b>Fecha:</b> <a id='fechaVuelo'></a> </li>
+                    <li class="report"><b id='statusMovilidad'></b></li>
+                    <li>Código generado con la información declarada por el usuario</li>
+                    <li>
+                      <button type="submit" class="btn " data-dismiss="modal" id="btn-Convert-Html2Image">
+                        Enviar a mi email
+                        <a id="descargarLink" href="#"></a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <input id="btn-Preview-Image" type="button" value="Preview" style='display: none;'/>
+         <div id="previewImage" style='display: none;'></div> -->
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 sectionStatus">
+        <div class="popOverStatus popOver active">
+          <ul class="card-body smallText">
+            <li>No salgas de casa si presentas síntomas asociados al Coronavirus, puedes contagiar a otras personas</li>
+            <li>Monitorea a diario tu salud, si presentas cambios en los síntomas contacta a tu centro de salud</li>
+            <li>Mantén dos metros de distancia con otras personas y evita lugares con posibles focos de contagio</li>
+            <li>Ten en cuenta el distanciamiento entre personas</li>
+            <li>Lava y desinfecta tus manos, los objetos y la ropa que uses al salir</li>
+            <li>Recuerda que este código es instransferible y de uso personal</li>
+          </ul>
+        </div>
+        <a class="btnPopOverStatus btnPopOver">
+          Para tu movilidad
+        </a>
+      </div>
+    </section>
+
+    <section class="mainDiagnostic row">
+      <!-- Saludo -->
+      <div class="columnDiagnostic col-12 col-sm-12 col-xl-3">
+        <h2 id='saludo'>¡Hola <br /> Bryan!</h2>
+        <p>Genera tu <b>código QR</b> para informar el cumplimiento de tu evaluación y así obtener recomendaciones de
+          autocuidado.</p>
+      </div>
+    </section>
+
+    <div class="modal fade" id="codigoQR" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm">
+        <div class="modal-content shadow-sm">
+          <div class="modal-header">
+            <h3 class="modal-title">Código QR</h3>
+          </div>
+          <div class="modal-body">
+            <p class="subtitle">El código QR, se ha enviado a tu correo electrónico.</p>
+            <p>Recuerda que este código es intrasferible y de uso personal.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" v-on:click="QRFinal()">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- FOOTER-->
+  <footer>
+    <p>© Copyright 2020 – Todos los derechos reservados Gobierno de Colombia.</p>
+  </footer>
+
+
+  <!-- SCRIPT-->
+  <script src="../js/js-coronApp/vendor/jquery-3.5.1.min.js"></script>
+  <script src="../js/js-coronApp/html2canvas.js"></script>
+  <script src="../js/js-coronApp/html2canvas.min.js"></script>
+  <script src="../js/js-coronApp/vendor/bootstrap.min.js"></script>
+  <script src="../js/js-coronApp/vendor/vue.min.js"></script>
+  <script src="../js/js-coronApp/codigoQR-coronaApp.js"></script>
+  <script src="../js/js-coronApp/featuresCoronApp.js"></script>
+
+</body>
+
+</html>
